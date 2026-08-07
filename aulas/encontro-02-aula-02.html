@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reflexão e realidade — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 02 · Aula 02</div>
+  <h1>Reflexão<span> e realidade</span></h1>
+  <p class="hero-sub">O que significa, na prática, "pensar sobre o pensar" — e por que isso não afasta a filosofia do mundo real</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Fundamentação: Reflexão, Realidade e Conhecimento</span>
+    <span class="meta-pill">Chauí</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Explicar o que significa "pensar sobre o pensar" (reflexão filosófica) e mostrar por que esse movimento não afasta a filosofia da realidade, mas é um modo específico de voltar-se para ela.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior, mapeamos as grandes áreas do pensamento filosófico — metafísica, epistemologia, ética, lógica e estética. Todas elas, cada uma a seu modo, praticam algo que costuma ser descrito como o traço comum da filosofia: a reflexão. Vale parar nessa palavra, porque ela é usada com frequência sem que se examine o que exatamente ela pede.</p>
+
+    <h3>O que significa "pensar sobre o pensar"</h3>
+    <p>A palavra reflexão vem do latim <em>reflectere</em>, que significa "dobrar-se para trás", "voltar-se sobre si mesmo". Quando alguém pensa sobre um objeto do mundo — por que choveu ontem, quando terminou uma guerra, quantos habitantes tinha uma cidade em determinado século —, esse é um pensamento de primeira ordem: dirigido diretamente ao objeto. Quando alguém pensa sobre o próprio ato de pensar — o que significa "explicar" algo, como sabemos que uma resposta está correta, o que estamos pressupondo ao formular essa pergunta —, esse é um pensamento de segunda ordem, um pensamento que se volta sobre si mesmo. É esse segundo movimento que Chauí, em <em>Convite à Filosofia</em>, chama de reflexão: o pensamento tomando a si próprio, e não apenas o mundo externo, como objeto de exame.</p>
+
+    <p>Isso não significa que refletir seja um exercício puramente mental, desconectado de qualquer coisa fora da cabeça de quem pensa. Refletir sobre como conhecemos algo, por exemplo, é ainda uma forma de lidar com a realidade — só que de um ângulo diferente: em vez de perguntar diretamente "o que aconteceu", pergunta-se "o que significa, para nós, dizer que sabemos o que aconteceu". A reflexão examina as condições e os instrumentos usados para acessar a realidade, não abandona a realidade em favor de um mundo à parte.</p>
+
+    <h3>Reflexão e realidade: dois polos que não se separam</h3>
+    <p>Um erro comum é imaginar que "filosofar" significa se afastar do mundo concreto para viver em pura abstração, como se pensar sobre o pensamento fosse escapar da realidade. Chauí insiste no contrário: a reflexão filosófica nasce justamente do contato com a realidade e volta a ela — só que enriquecida pelo exame dos próprios instrumentos usados para entendê-la. Um exemplo simples ajuda: perceber uma cor é uma experiência direta, imediata, do mundo. Perguntar o que é a percepção, como ela funciona, se as cores existem "no objeto" ou são produzidas pelo encontro entre objeto e observador — isso é reflexão. A segunda pergunta não anula a primeira experiência, apenas examina suas condições de possibilidade.</p>
+
+    <p>Essa distinção entre pensar o mundo e pensar sobre como pensamos o mundo tem consequência direta para quem se forma em História. Grande parte do trabalho histórico se dá no primeiro nível: reconstruir o que aconteceu, quando, com quem. Mas toda vez que um historiador pergunta o que faz de um relato do passado uma explicação válida, ou por que certas categorias de análise foram escolhidas em vez de outras, ele está fazendo reflexão no sentido filosófico do termo — pensando sobre o próprio pensar histórico, e não apenas aplicando-o. Esse é, precisamente, o exercício que faremos na próxima aula deste encontro, identificando um problema filosófico escondido dentro de um problema histórico concreto.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: pensar sobre a categoria "Idade Média"</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Periodização histórica · Reflexão sobre a própria ferramenta de análise</div>
+      <h3>Uma categoria que parece dada, mas foi construída</h3>
+      <p>Divisões como "Idade Média" ou "Idade Moderna" costumam ser usadas em sala de aula como se fossem fatos do próprio passado, blocos de tempo que existiram por si mesmos, esperando para serem nomeados. Um exercício de reflexão filosófica sobre essa categoria pergunta algo diferente: quem criou essa divisão, com que critério, e o que ela deixa em evidência ou em segundo plano quando organiza séculos inteiros de história sob um único rótulo. Usar essas categorias sem examiná-las é operar apenas no primeiro nível de pensamento descrito nesta aula — reconstruir eventos dentro de um recorte de tempo já dado. Perguntar por que esse recorte específico foi escolhido, e não outro, é voltar o pensamento sobre o próprio instrumento de trabalho do historiador, exatamente o movimento que caracteriza a reflexão filosófica. Isso não torna a categoria inútil — ela continua sendo uma ferramenta de organização necessária —, mas evita que o historiador a trate como um dado neutro da realidade, quando na verdade é uma escolha teórica que orienta, de saída, o que vai ser contado como relevante dentro daquele período.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Defina reflexão filosófica, distinguindo-a de simplesmente pensar sobre um objeto do mundo.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Identifique outra categoria usada rotineiramente em História (por exemplo, "civilização", "revolução", "progresso") e explique por que usá-la já pressupõe uma escolha teórica anterior.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Explique, com suas palavras, por que Chauí considera que a reflexão não afasta a filosofia da realidade, mesmo quando o pensamento se volta sobre si mesmo.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 02 · Aula 02 · Reflexão e realidade</p>
+</div>
+
+</body>
+</html>

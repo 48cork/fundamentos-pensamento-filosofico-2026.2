@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apresentação dos Projetos de Pesquisa — Parte 2 e Síntese do Curso — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 15 · Aula 03</div>
+  <h1>Seminário de Pesquisa<span> — Parte 2 e Síntese do Curso</span></h1>
+  <p class="hero-sub">A segunda metade da turma conclui as apresentações e o curso se fecha articulando, sem conteúdo novo, o percurso inteiro do Bloco 1 ao Bloco 4</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Fechamento e Apresentação de Pesquisas</span>
+    <span class="meta-pill">Roteiro de Pesquisa</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Concluir as apresentações do seminário final com a segunda metade da turma e encerrar o curso articulando, sem introduzir conteúdo novo, o percurso construído do Bloco 1 ao Bloco 4.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Roteiro da Sessão</h2>
+    </div>
+
+    <p>Esta aula fecha o ciclo de apresentações aberto na aula anterior e encerra, com ela, o curso inteiro. A agenda, os critérios e as orientações abaixo são os mesmos da Aula 02, para que quem apresenta hoje tenha exatamente as mesmas condições de quem já apresentou.</p>
+
+    <div class="activity green">
+      <div class="activity-header">
+        <div class="activity-icon green">🗓️</div>
+        <h3>Agenda da sessão</h3>
+      </div>
+      <p>A segunda metade da turma apresenta nesta aula, seguindo a mesma ordem e o mesmo formato da aula anterior: 5 a 8 minutos de apresentação e 2 a 3 minutos de perguntas por aluno(a). Ao final das apresentações, encerramos o curso com a síntese geral abaixo.</p>
+    </div>
+
+    <div class="activity blue">
+      <div class="activity-header">
+        <div class="activity-icon blue">✅</div>
+        <h3>Critérios de avaliação</h3>
+      </div>
+      <ul>
+        <li>Precisão no uso do conceito filosófico — não decorativo nem forçado</li>
+        <li>Consistência do argumento histórico — evidência real, não fabricada</li>
+        <li>Capacidade de reconhecer os limites do próprio conceito-guia aplicado ao caso</li>
+        <li>Clareza da apresentação</li>
+      </ul>
+    </div>
+
+    <div class="activity amber">
+      <div class="activity-header">
+        <div class="activity-icon amber">📌</div>
+        <h3>Orientações práticas</h3>
+      </div>
+      <p>Entreguem o texto final (2 a 4 páginas) ao final da apresentação — é a peça que fecha o projeto de pesquisa aberto no Checkpoint 1. O tempo continua sendo respeitado com rigor, pelo mesmo motivo da aula anterior: é um recurso compartilhado por toda a turma. Quem já apresentou na Aula 02 participa normalmente do momento de perguntas de hoje — o seminário é da turma inteira, não só de quem está na frente.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Roteiro de uma apresentação de 8 minutos</h2>
+    </div>
+
+    <p>Mesmo roteiro de referência da aula anterior, repetido aqui para quem apresenta hoje pela primeira vez — ilustrativo, sem se referir a nenhuma pesquisa específica.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Tempo</th><th>Etapa</th><th>O que entra</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0–1 min</td>
+            <td>O problema histórico</td>
+            <td>Apresentação direta do processo ou problema escolhido, sem rodeios introdutórios.</td>
+          </tr>
+          <tr>
+            <td>1–3 min</td>
+            <td>O conceito-guia</td>
+            <td>Definição precisa do conceito filosófico escolhido e justificativa breve de por que ele foi escolhido para esse problema.</td>
+          </tr>
+          <tr>
+            <td>3–7 min</td>
+            <td>A análise</td>
+            <td>Como o conceito ilumina o problema — incluindo, quando pertinente, o que o conceito não explica ou explica mal.</td>
+          </tr>
+          <tr>
+            <td>7–8 min</td>
+            <td>O que muda</td>
+            <td>Uma frase final: o que essa leitura filosófica muda na forma de entender o processo histórico escolhido.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="sintese">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Síntese Geral do Curso</h2>
+    </div>
+
+    <p>Concluídas as apresentações, vale reconstituir em poucas linhas o caminho percorrido desde o Encontro 1 — não para acrescentar nada de novo, mas para que o conjunto do curso apareça como um arco articulado, e não como uma lista de nomes soltos.</p>
+
+    <p>O Bloco 1 abriu perguntando o que é filosofia: o espanto diante do que parecia óbvio, a diferença entre mito e logos, entre filosofia e os outros modos de conhecer — ciência, religião, senso comum —, e as posições possíveis diante da pergunta por saber se é possível conhecer algo com segurança: dogmatismo, ceticismo, criticismo. Esse bloco entregou o instrumento que sustentou todo o resto do curso: a distinção entre aceitar uma explicação e examiná-la com critério próprio.</p>
+
+    <p>O Bloco 2 levou essa pergunta pelo conhecimento a dois objetos concretos: a natureza, com a cosmologia de Casini e as cosmogonias antigas, e o humano, com a antropologia filosófica de Scheler a Cassirer. Vimos o humano descrito, em sequência, como o ser que se distingue dos outros seres vivos, como o ser excêntrico que se relaciona consigo mesmo, como o ser carente que compensa sua natureza deficitária com cultura e instituições, e como o animal simbólico que constrói linguagem, mito e história. Esse bloco fechou anunciando a volta à Grécia Antiga — promessa cumprida no bloco seguinte.</p>
+
+    <p>O Bloco 3 foi o mais extenso: dos pré-socráticos e a pergunta pelo <em>arché</em>, passando por Sócrates, Platão e Aristóteles, até Descartes marcando a ruptura entre medieval e moderno, e concluindo com Marx, Adorno e Horkheimer e Sartre — três leituras críticas e distintas sobre razão, história e liberdade. Foi também neste bloco, no Checkpoint 1, que vocês escolheram o problema histórico e o conceito-guia que sustentaram a pesquisa apresentada nesta aula e na anterior.</p>
+
+    <p>O Bloco 4 trocou a pergunta pela essência das coisas pela pergunta por como o mundo é vivido e percebido: a fenomenologia de Husserl, o ser-no-mundo de Heidegger, e as leituras de Foucault e Deleuze sobre espaço, tempo e devir — ferramentas particularmente úteis para quem pensa historicamente, porque tratam diretamente de como o passado é narrado e o presente, justificado.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Bloco</th><th>Pergunta central</th><th>Autores-chave</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bloco 1 — Fundamentação</td>
+            <td>Como pensar sobre o próprio pensar, com critério?</td>
+            <td>Chauí, Aranha &amp; Martins, Bochenski, Epicuro</td>
+          </tr>
+          <tr>
+            <td>Bloco 2 — Cosmologia à Antropologia</td>
+            <td>O que distingue o humano no cosmos e na natureza?</td>
+            <td>Casini, Scheler, Plessner, Gehlen, Cassirer</td>
+          </tr>
+          <tr>
+            <td>Bloco 3 — Grécia ao Contemporâneo</td>
+            <td>Como fundamentar e criticar o conhecimento e as práticas?</td>
+            <td>Pré-socráticos, Sócrates, Platão, Aristóteles, Descartes, Marx, Adorno &amp; Horkheimer, Sartre</td>
+          </tr>
+          <tr>
+            <td>Bloco 4 — Ser-no-Mundo</td>
+            <td>Como o mundo é percebido e vivido no tempo e no espaço?</td>
+            <td>Husserl, Heidegger, Foucault, Deleuze</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Este último encontro fechou o arco com Rancière, na primeira aula, e com as duas sessões de apresentação em que vocês mostraram, de forma autônoma, o que esse percurso inteiro tornou possível: usar um conceito filosófico como instrumento real de leitura de um problema histórico, não como referência solta.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">05</div>
+      <h2>Perguntas de Avaliação Crítica Final</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Qual dos quatro blocos do curso — Fundamentação, Cosmologia/Antropologia, Grécia ao Contemporâneo, ou Ser-no-Mundo — mais mudou sua forma de pensar historicamente? Avalie e justifique com um exemplo concreto do próprio bloco.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Compare o modo como você lia um problema histórico no início do curso com o modo como você o leu na pesquisa apresentada. O que mudou de fato no seu método de leitura, e o que permaneceu igual?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Proponha, para além deste curso, uma forma concreta de continuar usando um conceito filosófico como instrumento de leitura em sua formação como historiador ou historiadora.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 15 · Aula 03 · Seminário de Pesquisa — Parte 2 e Síntese do Curso</p>
+</div>
+
+</body>
+</html>

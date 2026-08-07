@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sócrates: a Virada Antropológica — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 07 · Aula 03</div>
+  <h1>Sócrates: a Virada <span>Antropológica</span></h1>
+  <p class="hero-sub">Da pergunta pela natureza à pergunta pelo ser humano: maiêutica, autoconhecimento e o julgamento de Atenas</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Da Grécia Antiga ao Mundo Contemporâneo</span>
+    <span class="meta-pill">Marcondes · Jaspers</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar Sócrates como marco de uma virada antropológica na filosofia grega — do interesse pela natureza física (physis) ao interesse pelo ser humano, pela ética e pelo autoconhecimento —, discutindo a maiêutica e o julgamento que o condenou à morte em Atenas.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Vimos, nas duas aulas anteriores, Tales, Anaximandro, Anaxímenes, Heráclito e Parmênides perguntando pela natureza última do cosmo. Sócrates, ativo em Atenas no século V a.C., desloca essa pergunta: o objeto central da filosofia deixa de ser a physis e passa a ser o próprio ser humano — sua alma, suas ações, seu modo de viver em conjunto na cidade. É por esse deslocamento que a tradição identifica em Sócrates uma virada antropológica dentro da filosofia grega.</p>
+
+    <h3>Sofistas e o novo interesse pelo humano</h3>
+    <p>Sócrates não surge isolado. Na Atenas democrática do século V a.C., florescia um grupo de mestres itinerantes conhecidos como sofistas, que cobravam para ensinar retórica e argumentação a jovens que desejavam se destacar na vida pública da cidade — na assembleia, nos tribunais, na política. Os sofistas também deslocaram o interesse filosófico para o ser humano, mas com uma orientação relativista: Protágoras, um dos mais conhecidos, teria afirmado que "o homem é a medida de todas as coisas", sugerindo que a verdade e o valor moral variam conforme quem julga. Sócrates compartilha com os sofistas o interesse pelo humano, mas discorda frontalmente de sua conclusão relativista: para ele, existe um saber sobre o bem e a virtude que não se reduz à opinião de cada um, e que pode ser buscado através do diálogo rigoroso. Diferente dos sofistas, Sócrates não cobrava por seus ensinamentos e dizia não possuir, ele mesmo, esse saber — apenas saber que não sabia, o que já o distinguia daqueles que vendiam certezas prontas.</p>
+
+    <h3>Maiêutica e o conhece-te a ti mesmo</h3>
+    <p>O método socrático ficou conhecido como maiêutica — palavra que remete à arte da parteira, profissão de sua mãe segundo a tradição relatada por Marcondes. Assim como uma parteira ajuda a trazer ao mundo uma criança que já existia no corpo da mãe, Sócrates via seu método de perguntas sucessivas como uma forma de ajudar o interlocutor a "dar à luz" ideias que ele já possuía, sem ter consciência delas, e a reconhecer as contradições de suas próprias opiniões quando examinadas com cuidado. Essa prática de diálogo dirigido também é chamada de dialética. Associa-se a Sócrates a máxima "conhece-te a ti mesmo", inscrição que a tradição atribui ao templo de Apolo em Delfos e que ele adota como programa filosófico: antes de especular sobre o cosmo, é preciso examinar a própria alma, as próprias crenças, os próprios critérios de julgamento. Vale aqui reencontrar uma pergunta do Encontro 3, quando discutimos dogmatismo, ceticismo e criticismo como posturas diante do conhecimento: o "conhece-te a ti mesmo" socrático se aproxima do criticismo, porque não aceita nem a certeza inquestionada do dogmático nem a recusa total do cético — propõe, em vez disso, examinar continuamente o que se julga saber, sem nunca dar o processo por encerrado.</p>
+
+    <h3>Filosofia como risco</h3>
+    <p>Sócrates não deixou textos escritos; conhecemos seu pensamento sobretudo através dos diálogos de seu discípulo Platão, tema dos próximos encontros. Sua prática de questionar publicamente políticos, poetas e artesãos sobre o que realmente sabiam gerou incômodo entre setores da elite ateniense, e esse incômodo teve consequências concretas — tema que desenvolvemos no caso a seguir.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o julgamento e a morte de Sócrates</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Atenas · 399 a.C.</div>
+      <h3>Uma democracia condena seu maior questionador</h3>
+      <p>Em 399 a.C., Sócrates foi julgado em Atenas sob duas acusações principais: corromper a juventude e não reconhecer os deuses da cidade (impiedade). O julgamento ocorreu perante um júri popular, dentro do sistema de democracia direta ateniense — o mesmo sistema que, décadas antes, havia permitido a Atenas debater e votar suas próprias leis em assembleia aberta a cidadãos. Condenado por maioria de votos, Sócrates foi sentenciado à morte por ingestão de cicuta. O episódio é historicamente relevante para além da biografia individual: mostra uma tensão entre a prática da livre investigação filosófica e as normas religiosas e políticas de uma cidade que, ainda que democrática, não tolerava certos tipos de questionamento público sobre suas próprias bases — os deuses cívicos, os costumes estabelecidos, a formação da juventude. Para um historiador, o julgamento de Sócrates funciona como uma janela para as tensões internas da democracia ateniense no período posterior à Guerra do Peloponeso, quando a cidade atravessava instabilidade política e desconfiança em relação a figuras associadas, ainda que indiretamente, a grupos que haviam desafiado o regime democrático. A morte de Sócrates marcaria profundamente seu discípulo mais importante, Platão, cuja desconfiança da democracia — que estudaremos no próximo encontro — nasce, em boa parte, dessa experiência.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Compare o método de Sócrates (maiêutica, perguntas sucessivas) com o método dos sofistas (retórica, persuasão paga). Em que ponto essas duas abordagens do saber mais se distanciam?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Avalie a máxima "conhece-te a ti mesmo" à luz da teoria do conhecimento vista no Encontro 3. Ela se aproxima mais do dogmatismo, do ceticismo ou do criticismo? Justifique.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>O julgamento de Sócrates opôs a livre investigação filosófica às normas religiosas e políticas de Atenas. Compare esse conflito com outro episódio, histórico ou atual, de tensão entre pensamento crítico e autoridade estabelecida.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 07 · Aula 03 · Sócrates: a Virada Antropológica</p>
+</div>
+
+</body>
+</html>

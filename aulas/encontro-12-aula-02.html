@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Husserl II: O Mundo da Vida — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 12 · Aula 02</div>
+  <h1>Husserl II: <span>O Mundo da Vida</span></h1>
+  <p class="hero-sub">Por que a ciência mais exata do mundo depende, sem admitir, de um chão de experiência que ela mesma não consegue explicar</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: O Mundo Percebido e o Ser-no-Mundo</span>
+    <span class="meta-pill">Husserl (Forense Universitária, 2012)</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar o conceito husserliano de mundo da vida (Lebenswelt) e sua crítica ao objetivismo científico, mostrando como a experiência cotidiana e pré-teórica é o solo do qual toda ciência — inclusive a história enquanto disciplina — necessariamente parte.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior vimos que, para Husserl, a consciência é sempre intencional — sempre dirigida para algo — e que fazer fenomenologia significa voltar às coisas mesmas, descrever com rigor como os fenômenos se apresentam antes de qualquer teoria prévia. Essa exigência metodológica leva Husserl, já no fim de sua obra, a uma pergunta mais ampla: existe um terreno comum de experiência que toda ciência pressupõe, mas do qual nenhuma ciência consegue efetivamente dar conta? A esse terreno ele dá o nome de Lebenswelt — palavra alemã que se traduz como "mundo da vida" ou "mundo vivido": o conjunto de experiências, percepções e sentidos compartilhados no qual vivemos antes de qualquer teoria, cálculo ou medição científica.</p>
+
+    <h3>O mundo da vida como solo esquecido</h3>
+    <p>Husserl observa algo simples, mas de consequência grande: quando um físico mede a velocidade de um corpo em queda, ou quando um cartógrafo traça as coordenadas exatas de um território, ambos operam sobre um mundo já reduzido a números, unidades e abstrações — o "mundo matematizado" da ciência moderna. Mas antes de qualquer medição, existe o mundo tal como é vivido e percebido concretamente: o chão que pisamos, distinto por sua textura e não por seu coeficiente de atrito; a paisagem que vemos, com suas cores e proximidades relativas, não com suas coordenadas de latitude e longitude. A ciência constrói seus modelos abstratos a partir desse mundo vivido — mas, ao fazer isso, tende a esquecer que o mundo vivido continua ali, por baixo do modelo, como sua condição de possibilidade. O modelo científico não substitui o mundo da vida: ele é uma camada construída sobre ele, e só funciona porque esse chão pré-teórico segue sustentando-o.</p>
+
+    <p>Esse esquecimento é o que Husserl chama de objetivismo: a crença de que o mundo "verdadeiro" é apenas aquele descrito pelas equações e pelos dados objetivos da ciência, e que a experiência cotidiana e subjetiva seria apenas aparência a ser corrigida ou descartada. Husserl não nega o valor da ciência — ele mesmo formou-se em matemática antes de se voltar à filosofia. O que ele contesta é a pretensão de que o mundo matematizado seja mais real do que o mundo vivido, quando na verdade a relação é inversa: sem o mundo da vida como ponto de partida compartilhado, nenhuma medição científica jamais teria sentido para ninguém.</p>
+
+    <h3>Uma crítica que ecoa outras críticas à razão instrumental</h3>
+    <p>Essa desconfiança husserliana em relação a uma razão que se pretende puramente calculadora e objetiva não é isolada no curso. No Encontro 11, vimos Adorno e Horkheimer denunciarem como a razão instrumental — aquela voltada apenas para calcular meios eficazes para fins, sem perguntar pelo valor desses fins — pode se voltar contra a própria humanidade que a produziu, dissolvendo sentido e experiência vivida em puro cálculo de eficiência. Husserl chega a uma constatação próxima por outro caminho: quando a ciência esquece que depende do mundo da vida, ela se torna uma técnica sem raízes, incapaz de responder às perguntas que realmente importam para quem vive — perguntas sobre sentido, valor, orientação existencial. A crise das ciências europeias que dá título à obra citada na bibliografia deste bloco não é uma crise de resultados técnicos: os laboratórios seguem funcionando. É uma crise de significado — a ciência perdeu contato com o mundo vivido do qual ela mesma nasceu.</p>
+
+    <p>Para quem estuda história, o mundo da vida é um lembrete metodológico direto: por trás de qualquer série estatística, censo demográfico ou registro administrativo — instrumentos valiosos e necessários do ofício — existiu gente vivendo um cotidiano concreto, com percepções, aflições e sentidos próprios que nenhuma tabela numérica capta sozinha. Reduzir o passado apenas aos seus dados quantificáveis é repetir, na escrita da história, o mesmo objetivismo que Husserl identifica nas ciências naturais: confundir o modelo com a coisa modelada.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: os números e o que eles não contam</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Escrita da história · Estatística e mundo vivido</div>
+      <h3>Uma série de dados não é uma vida</h3>
+      <p>Imagine um historiador reconstruindo, a partir de registros paroquiais ou censitários, a taxa de mortalidade de uma região em determinado período. O número é indispensável: permite comparar períodos, detectar crises agrícolas ou epidemias, cruzar variáveis. Mas o próprio número, sozinho, não devolve nada do que era viver naquele contexto — o medo concreto diante de uma doença sem explicação disponível, o luto de uma família específica, a forma como uma comunidade organizava seus rituais funerários. Cartas, testamentos, relatos de viajantes e processos judiciais são, nesse sentido, vestígios mais próximos do mundo da vida do que a série estatística: eles preservam fragmentos de como o mundo aparecia a quem o vivia, não apenas o resultado agregado e já matematizado desse viver. Um bom trabalho histórico não escolhe entre os dois registros — combina a precisão do dado quantitativo com a atenção ao mundo vivido que só as fontes qualitativas conseguem sugerir.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Mobilizando o conceito de intencionalidade (Aula 12-01) e o de mundo da vida (Aula 12-02), explique por que, para Husserl, a consciência nunca está inteiramente separada do mundo vivido que ela habita.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Compare a crítica husserliana ao objetivismo científico com a crítica de Adorno e Horkheimer à razão instrumental. Em que pontos as duas críticas se aproximam, e em que pontos elas partem de perguntas diferentes?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Proponha um exemplo histórico (diferente do caso da mortalidade) em que dados quantitativos e fontes do mundo vivido, combinados, produzam uma interpretação mais completa do que qualquer um dos dois isoladamente.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 12 · Aula 02 · Husserl II: O Mundo da Vida</p>
+</div>
+
+</body>
+</html>

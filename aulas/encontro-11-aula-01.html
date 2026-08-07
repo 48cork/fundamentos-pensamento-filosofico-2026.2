@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marx: Materialismo Histórico, Práxis e Ideologia — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 11 · Aula 01</div>
+  <h1>Marx<span> Materialismo Histórico, Práxis e Ideologia</span></h1>
+  <p class="hero-sub">Como partir das condições materiais de existência, e não das ideias, para explicar a história e desmontar o disfarce das ideologias</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Da Grécia Antiga ao Mundo Contemporâneo</span>
+    <span class="meta-pill">Marx &amp; Engels (Boitempo)</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar os conceitos centrais do materialismo histórico de Marx — condições materiais como base da história, práxis e ideologia — e mostrar como esses conceitos se voltam para interpretar a sociedade industrial do século XIX.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>A aula anterior foi dedicada ao primeiro checkpoint da pesquisa própria de vocês. Retomamos agora a exposição de conteúdo filosófico exatamente onde a deixamos ao final do Encontro 10: no racionalismo cartesiano, que colocava a razão individual como fundamento último e suficiente do conhecimento. Marx escreve quase dois séculos depois de Descartes e propõe um deslocamento radical: em vez de partir das ideias — sejam elas as certezas da razão, sejam os grandes sistemas filosóficos anteriores —, ele propõe partir das condições materiais concretas em que homens e mulheres produzem sua existência. Não é a consciência que determina a vida material das pessoas; é a vida material, o modo como uma sociedade organiza a produção de seus bens, que determina a consciência.</p>
+
+    <h3>Materialismo histórico: a base material da vida social</h3>
+    <p>Chama-se materialismo histórico a essa forma de explicar a história a partir das relações que uma sociedade estabelece para produzir o que precisa para viver — quem trabalha, quem possui os meios de produção, como o excedente produzido é distribuído. Para Marx, esse arranjo material — que ele chama de infraestrutura — condiciona, embora não determine de forma mecânica, as formas de organização política, jurídica e cultural de uma sociedade, chamadas de superestrutura. Marx escreve em pleno processo de industrialização europeia do século XIX, num momento em que fábricas têxteis e siderúrgicas reorganizavam completamente a forma como grandes contingentes de trabalhadores viviam, produziam e se relacionavam entre si e com quem possuía o capital. É diante dessa transformação concreta — não como exercício filosófico abstrato — que ele formula seus conceitos.</p>
+
+    <h3>Práxis: pensar e transformar como um único movimento</h3>
+    <p>Um dos conceitos centrais dessa filosofia é o de práxis: a ideia de que pensar sobre o mundo e agir para transformá-lo não são atividades separadas, mas um único movimento. Compreender uma situação histórica de exploração não é, para Marx, um exercício puramente contemplativo — a compreensão correta de uma relação social é parte do processo mesmo de mudá-la. Essa é uma diferença de fundo em relação ao racionalismo cartesiano: para Descartes, a razão individual, isolada do mundo, bastava como ponto de partida da certeza; para Marx, o conhecimento verdadeiro sobre a sociedade só se completa quando articulado à ação coletiva capaz de transformar as condições que esse conhecimento revela.</p>
+
+    <h3>Ideologia: ideias que escondem interesses</h3>
+    <p>O terceiro conceito central é o de ideologia. Para Marx, certas ideias que circulam numa sociedade — sobre o que é justo, natural ou inevitável — não são neutras: funcionam para apresentar como universal e natural aquilo que, na verdade, serve aos interesses de um grupo social específico, disfarçando uma relação de poder como se fosse simples ordem das coisas. A ideia de que um contrato de trabalho, firmado "livremente" entre patrão e empregado, expressa igualdade entre as partes é, nessa leitura, um exemplo de ideologia: ela descreve formalmente uma liberdade que a desigualdade real de condições — quem possui os meios de produção e quem só possui sua força de trabalho para vender — torna, na prática, bastante limitada. Reconhecer uma ideologia não significa provar que ela é uma mentira deliberada; significa perceber que uma ideia aparentemente neutra carrega, embutido, um interesse de classe.</p>
+
+    <p>Esses três conceitos — condições materiais como base explicativa, práxis como unidade entre pensar e agir, ideologia como disfarce de interesse — formam um sistema de leitura da história bem diferente do racionalismo que vimos com Descartes, e também diferente, como vamos ver nas próximas duas aulas, das outras respostas críticas à modernidade que o século XX produziria.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: as fábricas têxteis inglesas e a jornada de trabalho</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Industrialização do século XIX · Condições materiais e ideologia</div>
+      <h3>Jornadas de doze, treze horas apresentadas como acordo livre</h3>
+      <p>Nas fábricas têxteis inglesas do século XIX, jornadas de trabalho de doze, treze horas diárias, incluindo mão de obra infantil em muitos casos, eram comuns e formalmente sustentadas por contratos firmados entre operários e proprietários das fábricas. Na linguagem jurídica da época, tratava-se de acordos livres entre partes iguais perante a lei. Lido a partir do materialismo histórico, esse mesmo episódio aparece de forma bem diferente: a "liberdade" do contrato esconde uma desigualdade material de fundo — de um lado, quem possui as máquinas e as instalações; de outro, quem não tem outra fonte de sobrevivência além de vender sua força de trabalho, mesmo em condições que dificilmente escolheria se tivesse alternativa real. A ideia de "livre contrato" funciona, nessa leitura, como ideologia no sentido preciso que Marx dá ao termo: não é uma mentira inventada de propósito, é uma descrição formalmente correta que naturaliza uma relação de poder desigual, apresentando-a como simples acordo entre iguais.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Distinga o critério de verdade do materialismo histórico do critério de verdade do racionalismo cartesiano. Em que ponto exato a resposta de Marx rompe com o que Descartes propunha?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Tensione o conceito de ideologia com a ideia de "razão como critério" vista em Descartes: uma ideia pode parecer inteiramente racional e, ainda assim, funcionar como ideologia? Justifique.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Aplique o conceito de práxis a um processo histórico diferente do exemplo das fábricas têxteis: de que forma pensar sobre uma situação e agir para transformá-la aparecem unidos nesse outro processo que você escolheu?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 11 · Aula 01 · Marx: Materialismo Histórico, Práxis e Ideologia</p>
+</div>
+
+</body>
+</html>

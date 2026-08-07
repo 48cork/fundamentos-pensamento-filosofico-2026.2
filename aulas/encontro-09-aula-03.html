@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aristóteles III: Política e o Zóon Politikon — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 09 · Aula 03</div>
+  <h1>Aristóteles III<span> Política e o Zóon Politikon</span></h1>
+  <p class="hero-sub">Por que, para Aristóteles, o ser humano só se realiza plenamente dentro da pólis — e como ele estuda a política a partir de constituições reais, não de cidades ideais</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Da Grécia Antiga ao Mundo Contemporâneo</span>
+    <span class="meta-pill">Aristóteles (Ed. UnB)</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar a teoria política de Aristóteles — o ser humano como zóon politikon —, sua crítica à cidade ideal de Platão e seu método empírico de comparar constituições gregas realmente existentes.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior, vimos que a eudaimonia — o florescimento pleno de uma vida humana — depende do exercício habitual da virtude, guiado pela sabedoria prática. Aristóteles não trata essa questão como assunto privado, resolvido no interior de cada indivíduo isolado: para ele, a ética se completa na política, porque é na vida em comunidade organizada que o ser humano encontra as condições concretas para exercer a virtude e alcançar a vida boa. É essa passagem — da ética individual à comunidade política — que organiza a última aula deste encontro.</p>
+
+    <h3>O zóon politikon: por que o humano é naturalmente político</h3>
+    <p>A tese central de Aristóteles é que o ser humano é, por natureza, um <em>zóon politikon</em> — um animal político, um ser vivo cuja natureza só se completa dentro de uma comunidade política organizada. Diferente de outros animais que também vivem em grupo, como as abelhas, os seres humanos possuem a linguagem (<em>logos</em>), capacidade que não serve apenas para expressar prazer e dor, mas para deliberar coletivamente sobre o justo e o injusto, o conveniente e o prejudicial. É essa capacidade de deliberação compartilhada que torna a pólis, para Aristóteles, algo mais do que uma soma de indivíduos reunidos por conveniência ou sobrevivência: a comunidade política é o ambiente natural em que a razão humana se exerce plenamente, do mesmo modo que uma mão separada do corpo deixa de ser, em sentido pleno, uma mão. Fora da pólis — argumenta Aristóteles — só vivem plenamente ou os deuses ou os animais, nunca um ser humano completo.</p>
+
+    <p>Essa "plenitude" política, porém, não está disponível igualmente a todos os que vivem dentro da pólis. Aristóteles reserva o título de cidadão — quem delibera e julga, ocupando cargos e participando diretamente do governo — a uma parcela restrita da população: homens livres, adultos, nascidos de pai e mãe também cidadãos. Ficam de fora dessa condição plena as mulheres, os escravizados e os estrangeiros residentes, os chamados metics, ainda que todos esses grupos vivam, trabalhem e contribuam para a vida material da mesma cidade. Entender essa delimitação é indispensável para avaliar com precisão o alcance da tese do zóon politikon: quando Aristóteles diz que o ser humano se realiza plenamente na pólis, está descrevendo a experiência de uma categoria específica e limitada de habitantes da cidade grega, não de todos os que nela vivem — distinção que o caso a seguir torna concreta.</p>
+
+    <h3>Crítica a Platão: contra a cidade sem propriedade nem família</h3>
+    <p>É aqui que a divergência com Platão se torna mais concreta e política. N'A República, como vimos no Encontro 8, Platão propõe que a classe dos guardiões viva sem propriedade privada e sem família nuclear, com bens, cônjuges e filhos partilhados coletivamente, como forma de eliminar conflitos de interesse e fortalecer a unidade da cidade. Aristóteles rejeita essa proposta abertamente: para ele, o resultado de abolir a propriedade e a família não seria maior unidade, mas o enfraquecimento dos laços concretos de afeto e responsabilidade que sustentam qualquer comunidade real — ninguém cuida com o mesmo empenho daquilo que é "de todos" e, portanto, de ninguém em particular. Longe de ser um problema a eliminar, a propriedade privada bem administrada é, para Aristóteles, ocasião para o exercício de virtudes como a generosidade, que exige ter algo próprio para doar. A pólis ideal de Platão, desenhada a partir de princípios racionais abstratos, cede lugar a uma reflexão sobre como comunidades políticas realmente funcionam.</p>
+
+    <h3>Historicidade da pólis: comparar constituições, não desenhar utopias</h3>
+    <p>Coerente com o método empírico que já vimos operando em sua metafísica e sua ética, Aristóteles aborda a política reunindo e comparando um grande número de constituições de cidades gregas historicamente existentes, classificando-as em tipos — monarquia, aristocracia, e uma forma mista que chama de politeia — e em suas versões degeneradas — tirania, oligarquia, democracia entendida como governo da maioria pobre contra os demais. Em vez de partir de uma cidade ideal e depois medir as cidades reais por sua distância desse modelo, como faz Platão, Aristóteles parte do material histórico concreto — os regimes políticos gregos efetivamente registrados — para, a partir da comparação entre eles, chegar a uma teoria dos tipos possíveis de governo e das condições que fazem cada um deles funcionar ou degenerar.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Questão</th><th>Platão (A República)</th><th>Aristóteles (Política)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ponto de partida do método</td>
+            <td>Princípios racionais, desenha-se a cidade ideal</td>
+            <td>Constituições gregas historicamente existentes, comparadas entre si</td>
+          </tr>
+          <tr>
+            <td>Propriedade e família dos guardiões</td>
+            <td>Abolidas, bens e família partilhados coletivamente</td>
+            <td>Mantidas, condição para o exercício de virtudes como a generosidade</td>
+          </tr>
+          <tr>
+            <td>Critério de avaliação de um regime</td>
+            <td>Distância em relação ao modelo ideal único</td>
+            <td>Adequação às circunstâncias históricas e ao caráter de cada povo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Encerramos aqui, com Aristóteles, a leitura direta dos grandes sistematizadores da filosofia grega antiga. O próximo encontro dá um salto de quase dois mil anos: com Descartes, a pergunta central deixa de ser qual a melhor forma de organizar a vida em comum e passa a ser como um indivíduo, sozinho, pode ter certeza do que sabe.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o teórico da pólis que nunca foi cidadão</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Atenas, 322 a.C. · O metic que teorizou o zóon politikon</div>
+      <h3>Uma vida em tensão com a própria teoria</h3>
+      <p>Nascido em Estagira, na Macedônia, Aristóteles viveu e ensinou boa parte de sua vida adulta em Atenas sem jamais se tornar cidadão ateniense — condição de "metic", estrangeiro residente, que lhe negava, entre outros direitos, a plena participação política e a posse de terra na cidade. É essa mesma cidade que ele descreve, em sua Política, como o ambiente natural em que um ser humano se realiza plenamente como zóon politikon. Quando Alexandre, seu antigo aluno, morre em 322 a.C., um forte sentimento antimacedônico se espalha por Atenas, e Aristóteles, associado à corte da Macedônia por sua ligação com Alexandre, deixa a cidade e morre pouco depois em Cálcis. A biografia de Aristóteles ilustra, sem que ele tenha planejado, um limite histórico concreto de sua própria teoria: a pólis grega, descrita como espaço natural de plena realização humana, definia com rigor quem contava como membro pleno dessa comunidade — e o maior sistematizador da ideia de zóon politikon nunca esteve, ele mesmo, do lado de dentro dessa fronteira.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Compare a crítica de Aristóteles à comunidade de bens e de família proposta por Platão para os guardiões (Encontro 8, Aula 2). Qual dos dois argumentos você considera mais consistente, e por quê?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Avalie a tensão entre a teoria do zóon politikon — o ser humano só se realiza plenamente na pólis — e o fato histórico de que o próprio Aristóteles nunca foi cidadão de Atenas, cidade onde viveu e ensinou por a maior parte de sua vida adulta.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Compare o método de Platão, que desenha uma cidade ideal a partir de princípios racionais, com o de Aristóteles, que compara constituições gregas realmente existentes. Qual método parece mais próximo do ofício do historiador, e por quê?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 09 · Aula 03 · Aristóteles III: Política e o Zóon Politikon</p>
+</div>
+
+</body>
+</html>

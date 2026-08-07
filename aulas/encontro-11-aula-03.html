@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sartre: Existencialismo e Liberdade — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 11 · Aula 03</div>
+  <h1>Sartre<span> Existencialismo e Liberdade</span></h1>
+  <p class="hero-sub">Por que Sartre afirma que o homem está condenado a ser livre, e o que essa liberdade tem a ver com uma consciência que Husserl já descrevera antes dele</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Da Grécia Antiga ao Mundo Contemporâneo</span>
+    <span class="meta-pill">Jean-Paul Sartre</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar o existencialismo de Sartre — a tese de que a existência precede a essência, a liberdade radical do indivíduo e a ideia do homem como projeto —, ancorando esse pensamento na experiência histórica da Ocupação nazista da França, e mostrar que essa filosofia nasce de uma leitura da fenomenologia de Husserl, ponto de partida que o curso retoma no encontro seguinte.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Fechamos o Bloco 3 com a terceira resposta deste encontro à pergunta sobre liberdade, razão e história na modernidade. Marx explicou a liberdade humana a partir das condições materiais de produção e da luta de classes; Adorno e Horkheimer, na aula anterior, mostraram como a própria razão que prometia libertar pode se voltar contra o humano quando se torna puramente instrumental. Sartre parte de um lugar diferente dos dois: não da estrutura econômica da sociedade, nem da estrutura da razão histórica, mas da estrutura da consciência individual. Para ele, é ali — na consciência de cada pessoa, antes de qualquer sistema social ou científico — que a questão da liberdade precisa ser colocada primeiro.</p>
+
+    <h3>"A existência precede a essência"</h3>
+    <p>Sartre escreve boa parte de sua obra central, <em>O Ser e o Nada</em>, publicada em 1943, durante a Ocupação nazista da França (1940-1944), e formula sua tese mais conhecida em termos simples numa conferência de 1945, já depois da Libertação de Paris, publicada como <em>O Existencialismo é um Humanismo</em>. Um objeto fabricado — um cortador de papel, no exemplo do próprio Sartre — tem sua essência definida antes de existir: o artesão sabe para que serve antes de produzi-lo. Se existe uma ideia de Deus como criador do homem, o raciocínio se repetiria: primeiro a essência humana concebida na mente divina, depois o homem trazido à existência para cumpri-la. Sartre inverte essa ordem para o ser humano: não há essência prévia, nenhuma natureza humana fixada de antemão que determine o que cada pessoa deve ser. O homem primeiro existe, se lança no mundo, e só depois se define — através das escolhas que faz ao longo da vida. Essa é a fórmula "a existência precede a essência": não há um roteiro humano dado de antemão para seguir ou trair.</p>
+
+    <h3>Liberdade radical e o homem como projeto</h3>
+    <p>Se não há essência prévia, também não há desculpa possível para as próprias escolhas — nem Deus, nem uma suposta natureza humana, nem determinismo histórico automático podem ser convocados para justificar o que alguém faz. É nesse sentido que Sartre diz que o homem está condenado a ser livre: condenado porque essa liberdade não foi escolhida, é a própria condição de existir como consciência; e livre porque nenhuma força externa decide, no lugar da pessoa, o que ela vai fazer de si mesma. Cada escolha projeta a pessoa em direção a um futuro que ela mesma constrói — daí a expressão "o homem como projeto": não um ser pronto, mas um vir-a-ser contínuo, responsável por aquilo em que se transforma a cada decisão. Sartre atravessa a Ocupação alemã escrevendo justamente sobre esse tema, num país sob censura, ocupação militar e delação, onde a experiência cotidiana de decidir colaborar, resistir ou calar-se tornava a liberdade — e o peso dela — mais concreta do que qualquer definição abstrata.</p>
+
+    <p>Essa liberdade sem desculpa gera angústia, e boa parte das pessoas passa a vida tentando escapar dela por um mecanismo que Sartre chama de má-fé: fingir, para si mesmo, que se é apenas aquilo que uma função ou um papel social determina, como se houvesse ali uma essência fixa cumprindo-se, e não uma escolha renovada a cada instante. O exemplo que Sartre usa é o do garçom que representa o papel de garçom com gestos ligeiramente exagerados, mecânicos, como se "ser garçom" fosse uma essência que ele apenas executa — quando, na verdade, ele escolhe, a cada gesto, continuar sendo garçom, e poderia escolher diferente. A má-fé não é mentir para outra pessoa; é a tentativa de esconder de si mesmo a própria liberdade, tratando-a como se fosse necessidade.</p>
+
+    <h3>Sartre, leitor de Husserl: a raiz fenomenológica do existencialismo</h3>
+    <p>Essa filosofia da consciência livre não nasce isolada. Nos anos 1930, Sartre estuda em Berlim a obra do filósofo alemão Edmund Husserl, fundador da fenomenologia, e é dessa leitura que herda o conceito central sobre o qual constrói o existencialismo: a intencionalidade da consciência. Para Husserl, a consciência nunca é um recipiente fechado, cheio de conteúdos internos — ela é sempre consciência <em>de</em> alguma coisa, sempre dirigida para fora, para o mundo. Sartre leva essa ideia às últimas consequências: se a consciência não tem um conteúdo fixo próprio, se ela é pura direção para o mundo, então também não pode ter uma essência interior que a determine antecipadamente. É esse ponto de partida fenomenológico, husserliano, que sustenta filosoficamente a tese de que a existência precede a essência — e é por isso que a fenomenologia de Husserl, tratada em si mesma no próximo encontro, não é um desvio de assunto, mas a origem teórica direta do existencialismo que acabamos de estudar.</p>
+
+    <div class="highlight"><strong>Ponte para o próximo encontro:</strong> o existencialismo de Sartre é, na origem, uma leitura da fenomenologia de Husserl — da noção de que a consciência é sempre consciência de algo, voltada intencionalmente para o mundo, sem essência interior fixa. O Encontro 12 retoma Husserl diretamente, na sua própria proposta de "voltar às coisas mesmas".</div>
+
+    <p>Isso deixa o contraste do bloco completo: onde Marx localiza o problema da liberdade nas condições materiais que a sociedade impõe ao indivíduo, e Adorno e Horkheimer o localizam na estrutura da razão instrumental que a modernidade adotou, Sartre o localiza na própria estrutura da consciência, anterior a qualquer condição social ou científica. As três não são versões diferentes do mesmo argumento — são respostas distintas, com pontos de partida distintos, à mesma pergunta sobre o que significa ser livre na história.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: Sartre entre a Ocupação e a Libertação de Paris</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · França ocupada, 1940-1945 · Filosofia e responsabilidade</div>
+      <h3>Escrever sobre liberdade sob ocupação militar</h3>
+      <p>Sartre é mobilizado no início da Segunda Guerra, feito prisioneiro pelos alemães em 1940 e liberado no ano seguinte, retornando a uma Paris já sob ocupação nazista. É nesse cenário — imprensa censurada, delação vizinha, escolhas cotidianas carregadas de risco real — que ele escreve <em>O Ser e o Nada</em>, publicado em 1943, e participa de círculos de resistência intelectual entre escritores franceses. A filosofia da liberdade radical não é, aqui, um exercício abstrato de gabinete: é formulada exatamente no momento em que a liberdade concreta dos franceses está mais restringida, e em que decidir colaborar, aderir à resistência ou simplesmente se calar tem consequência imediata e pessoal. Depois da Libertação de Paris em 1944, Sartre profere em 1945 a conferência que se tornaria <em>O Existencialismo é um Humanismo</em>, respondendo a duas críticas que o pensamento existencialista recebia na época: de um lado, autores ligados ao marxismo o acusavam de ser um pensamento individualista, alheio à luta coletiva; de outro, autores católicos o acusavam de abrir caminho para o niilismo, já que sem essência humana fixa e sem Deus como garantia, nada impediria qualquer escolha. Sartre responde que é exatamente o oposto: se cada pessoa é inteiramente responsável pelo que faz de si, sem desculpa possível, essa é a forma mais exigente de responsabilidade moral que se pode formular — não menos ética por não ter um roteiro pronto, mas mais, porque cada escolha individual, para Sartre, também afirma um valor que se propõe válido para toda a humanidade.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Compare o ponto de partida de Sartre (a consciência individual, livre e sem essência prévia) com o ponto de partida de Marx (as condições materiais de produção que estruturam a sociedade). Que diferença prática faz começar a pensar a liberdade humana por um lado ou pelo outro?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Tensione a liberdade radical de Sartre — "o homem está condenado a ser livre" — com o diagnóstico de Adorno e Horkheimer sobre a razão instrumental a serviço da barbárie. É possível ser absolutamente livre, no sentido sartreano, dentro de uma sociedade em que a própria razão se voltou contra o humano?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Avalie por que a noção husserliana de intencionalidade da consciência — a consciência como sempre voltada para o mundo, sem conteúdo interior fixo — é necessária para Sartre sustentar que a existência precede a essência. O existencialismo se sustentaria sem essa base fenomenológica?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 11 · Aula 03 · Sartre: Existencialismo e Liberdade</p>
+</div>
+
+</body>
+</html>

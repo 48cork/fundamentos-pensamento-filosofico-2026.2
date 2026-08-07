@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deleuze: Devir e Tempo Não-Linear — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 14 · Aula 02</div>
+  <h1>Deleuze: <span>Devir e Tempo Não-Linear</span></h1>
+  <p class="hero-sub">O desafio de pensar a história sem uma linha reta de causas e consequências</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: O Mundo Percebido e o Ser-no-Mundo</span>
+    <span class="meta-pill">Deleuze (Editora 34, 1992)</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar, a partir de Conversações, o conceito deleuziano de devir e sua concepção de tempo não-linear, discutindo o desafio que essas ideias colocam à narrativa histórica tradicional organizada em linha reta de causa e efeito.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior, vimos Foucault usar a genealogia para desnaturalizar o presente, mostrando que instituições hoje tidas como óbvias resultam de processos históricos contingentes, não de um desenvolvimento necessário. Gilles Deleuze foi contemporâneo e interlocutor próximo de Foucault — os dois trocaram influências diretas, e Conversações, livro de entrevistas e textos reunidos usado nesta aula, contém reflexões do próprio Deleuze sobre o trabalho de Foucault. Deleuze radicaliza, à sua maneira, a mesma desconfiança em relação a narrativas que apresentam o presente como resultado necessário e linear do passado — mas o faz a partir de um conceito próprio, o devir, e de uma concepção específica de tempo.</p>
+
+    <h3>Devir: processo sem ponto de chegada fixo</h3>
+    <p>Devir, em Deleuze, nomeia um processo de transformação contínua que não tem por objetivo alcançar uma forma final, estável e definitiva. É importante marcar a diferença entre "tornar-se algo", no sentido comum — como se houvesse um ponto de chegada predefinido, uma essência a ser realizada — e "devir", no sentido deleuziano: um movimento constante de diferenciação, sem essência fixa esperando no final do caminho. Um devir não é a passagem de um estado A definido para um estado B igualmente definido e estável: é a própria transformação, tomada como processo, sem se congelar em nenhum dos dois polos.</p>
+
+    <p>Essa ideia tem consequência direta para como pensamos identidades históricas — de indivíduos, grupos, instituições, nações. Em vez de perguntar "o que essa entidade histórica realmente é, em sua essência", a pergunta deleuziana seria mais próxima de "que processos de transformação atravessam essa entidade, sem nunca se fixarem definitivamente em uma forma última"? Um movimento social, por exemplo, não teria uma "essência" original que se manteria idêntica ao longo do tempo, apenas mudando de roupagem — ele estaria em devir constante, sendo outra coisa a cada momento em que se reconfigura.</p>
+
+    <h3>Tempo não-linear: multiplicidade em vez de linha reta</h3>
+    <p>Ligado ao devir está o modo como Deleuze concebe o tempo: não como uma linha única, reta, de causas encadeadas a consequências em sequência ordenada — o modelo que costuma organizar narrativas de "progresso" ou de evolução necessária — mas como multiplicidade, feixe de processos que se cruzam, se bifurcam, se interrompem, sem convergir obrigatoriamente para um único ponto de chegada. Essa concepção desafia diretamente um certo modo de escrever história: aquele que organiza os acontecimentos em uma sucessão de causas e efeitos claramente encadeados, culminando necessariamente no presente como ápice ou resultado lógico de tudo o que veio antes.</p>
+
+    <p>Esse desafio dialoga com uma crítica que já vimos no curso: a de Adorno e Horkheimer, no Encontro 11, ao mito do progresso — a ideia de que a história caminha automaticamente para um estado melhor, mais racional, mais civilizado. Adorno e Horkheimer mostram que essa narrativa de progresso pode ocultar catástrofes concretas produzidas em seu próprio nome. Deleuze ataca um alvo relacionado, mas por outro ângulo: não apenas o conteúdo otimista da narrativa de progresso, mas sua própria forma — a ideia de que a história tem uma linha, uma direção, um sentido único de leitura. Para Deleuze, a realidade histórica é feita de multiplicidades que se cruzam de formas imprevisíveis, e reduzir isso a uma única linha causal é já uma simplificação que apaga processos, becos sem saída e possibilidades não realizadas que também fizeram parte do que aconteceu.</p>
+
+    <p>Para quem estuda e escreve história, essa provocação não significa abandonar a busca por causas e conexões — significa desconfiar de narrativas fechadas demais, que apresentam o presente como destino inevitável de um passado organizado em linha reta, e permanecer atento às bifurcações, aos caminhos não seguidos e aos processos que continuam em aberto, sem síntese final.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: um movimento social em devir</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Historiografia · Identidade que não se fixa</div>
+      <h3>Um movimento que nunca foi "uma coisa só"</h3>
+      <p>Pense em qualquer movimento social de longa duração, que atravessou décadas e contextos diferentes. Uma narrativa linear tenderia a descrevê-lo como se tivesse uma essência estável desde a origem, apenas "evoluindo" ou "se adaptando" aos novos tempos, rumo a uma forma mais desenvolvida. A leitura deleuziana propõe outra atenção: em cada momento, esse movimento foi atravessado por disputas internas, alianças inesperadas, rupturas e reinvenções que não seguiam uma linha de continuidade simples — em certos momentos, ele quase se tornou outra coisa completamente distinta, por caminhos que não vingaram, mas que estiveram concretamente em jogo. Escrever a história desse movimento como devir, em vez de como essência que evolui, significa dar peso a essas bifurcações não realizadas, e não apenas à linha que efetivamente prevaleceu no fim.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Compare a genealogia de Foucault (Aula 14-01) com o devir de Deleuze: os dois questionam narrativas lineares sobre o presente, mas por caminhos diferentes. Explique essa diferença com suas palavras.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Relacione a crítica deleuziana ao tempo linear com a crítica de Adorno e Horkheimer ao mito do progresso. Em que ponto elas se encontram, e em que ponto Deleuze vai além da crítica de Adorno e Horkheimer?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Avalie o caso do movimento social em devir: até que ponto é possível escrever uma história coerente sem organizar os fatos em alguma linha de causa e consequência? Proponha um limite prático para essa proposta deleuziana.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 14 · Aula 02 · Deleuze: Devir e Tempo Não-Linear</p>
+</div>
+
+</body>
+</html>

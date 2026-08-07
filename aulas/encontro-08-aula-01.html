@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Platão I: Teoria das Formas e Mito da Caverna — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 08 · Aula 01</div>
+  <h1>Platão I: A Teoria das <span>Formas</span></h1>
+  <p class="hero-sub">O Mito da Caverna e a busca por um conhecimento que vá além do que os sentidos mostram</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Da Grécia Antiga ao Mundo Contemporâneo</span>
+    <span class="meta-pill">Platão (Gulbenkian)</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar a Teoria das Formas de Platão e o Mito da Caverna como resposta ao problema deixado pela disputa entre Heráclito e Parmênides, articulando permanência (as Formas) e mudança (o mundo sensível) em um único sistema.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Na aula anterior, vimos Sócrates deslocar a filosofia da physis para o ser humano e morrer, em 399 a.C., por causa desse deslocamento. Platão, nascido em Atenas em família aristocrática e discípulo direto de Sócrates, herda essa pergunta pelo humano e a projeta em um sistema metafísico completo, capaz também de responder à disputa entre Heráclito e Parmênides que estudamos no Encontro 7. O mundo sensível, para Platão, muda continuamente, como queria Heráclito; mas existe outra dimensão da realidade, a das Formas, tão eterna e imutável quanto exigia Parmênides. Platão não escolhe um lado da disputa: constrói um sistema em que os dois lados coexistem, em planos diferentes de realidade.</p>
+
+    <h3>Duas dimensões da realidade</h3>
+    <p>Platão distingue o mundo sensível — tudo o que percebemos pelos sentidos, sujeito a nascimento, mudança e destruição — do mundo inteligível, formado pelas Formas (também chamadas de Ideias). Uma Forma não é um objeto físico nem um conceito mental qualquer: é a realidade perfeita e eterna da qual as coisas sensíveis são cópias imperfeitas. Um cavalo particular nasce, envelhece e morre; a Forma de Cavalo, para Platão, é eterna e imutável, e é dela que todo cavalo particular participa, de modo imperfeito, para merecer esse nome. O mesmo vale para conceitos mais abstratos: existem objetos belos particulares, que mudam e desaparecem, mas existe a Forma da Beleza em si, perfeita e permanente, da qual toda beleza sensível é reflexo parcial. Conhecer de verdade, para Platão, não é observar as coisas sensíveis — é alcançar, pelo raciocínio, as Formas que estão por trás delas.</p>
+
+    <h3>O Mito da Caverna</h3>
+    <p>No livro VII de A República, Platão apresenta a alegoria mais conhecida de sua filosofia. Um grupo de prisioneiros vive acorrentado desde a infância no fundo de uma caverna, olhando apenas para uma parede à frente. Atrás deles, um fogo projeta sombras de objetos e pessoas que passam por trás de um muro, e os prisioneiros, sem nunca terem visto outra coisa, tomam essas sombras pela realidade inteira. Um deles é libertado, arrastado para fora da caverna e, depois de um período de deslumbramento e dor causado pela luz do sol, passa a enxergar o mundo real — as próprias coisas, e não mais suas sombras — e, por fim, o próprio sol, símbolo da Forma do Bem, fonte última de toda verdade e realidade para Platão. Quando esse prisioneiro liberto retorna à caverna para contar aos outros o que viu, é recebido com desconfiança e hostilidade, a ponto de os prisioneiros ainda acorrentados considerarem matá-lo caso ele tente libertá-los à força. O mito funciona como alegoria da educação filosófica: a ascensão do conhecimento sensível ao conhecimento inteligível é penosa, mas quem a realiza tem o dever de retornar e orientar os demais — uma leitura difícil de separar da própria experiência de Platão como discípulo de um filósofo condenado por questionar as certezas de sua cidade.</p>
+
+    <h3>De Sócrates ao sistema platônico</h3>
+    <p>Depois da morte de Sócrates, Platão viajou e, por volta de 387 a.C., fundou em Atenas a Academia — uma das primeiras instituições organizadas de ensino superior da tradição ocidental, que permaneceria em funcionamento por séculos. A Teoria das Formas pode ser lida como a resposta filosófica de Platão à experiência de ver seu mestre condenado por uma cidade movida, a seus olhos, pela opinião instável da maioria (a doxa) em vez de pelo conhecimento verdadeiro (a episteme). Se as opiniões humanas mudam e se contradizem, como aconteceu no julgamento de Sócrates, é porque elas se referem ao mundo sensível, instável por definição; um saber estável só pode se apoiar em algo que não muda — as Formas.</p>
+
+    <div class="highlight">A Teoria das Formas não resolve a disputa entre Heráclito e Parmênides eliminando um dos lados: ela separa a realidade em dois planos, atribuindo a cada filósofo razão em seu próprio domínio — o sensível muda, o inteligível permanece.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: a Academia de Platão</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Atenas · Academia, fundada por volta de 387 a.C.</div>
+      <h3>Uma instituição para ensinar a olhar além das sombras</h3>
+      <p>A Academia fundada por Platão em Atenas organizava o ensino em torno do diálogo e do exercício do raciocínio, seguindo o modelo socrático de perguntas e respostas em vez de aulas puramente expositivas. Segundo a tradição relatada por Marcondes, a entrada da Academia trazia uma inscrição advertindo que ninguém sem conhecimento de geometria deveria adentrar — um sinal do peso que Platão atribuía ao raciocínio matemático como treino para alcançar verdades que não dependem da observação sensível, exatamente o tipo de conhecimento que o prisioneiro liberto do mito busca ao deixar a caverna. A Academia funcionou por séculos após a morte de Platão e é hoje considerada, na história da educação ocidental, um dos primeiros exemplos de instituição dedicada sistematicamente ao ensino superior — um ponto relevante para quem, como historiador, se interessa não só pelas ideias de Platão, mas pelas formas institucionais concretas através das quais essas ideias foram transmitidas, discutidas e preservadas ao longo do tempo.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Compare o mundo sensível e o mundo das Formas em Platão. Que critério permite distinguir um do outro, e por que apenas um deles seria objeto de conhecimento verdadeiro (episteme) para Platão?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>O Mito da Caverna pode ser lido como uma alegoria sobre educação. Avalie até que ponto essa leitura se sustenta, considerando a reação dos prisioneiros ao retorno daquele que foi liberto.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Tensione a Teoria das Formas com a posição de Heráclito vista no Encontro 7. Platão resolve o problema do movimento e da permanência, ou apenas o desloca para um novo terreno?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 08 · Aula 01 · Platão I: Teoria das Formas e Mito da Caverna</p>
+</div>
+
+</body>
+</html>

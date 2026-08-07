@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Como Ler um Texto Filosófico: exercício com Epicuro — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 03 · Aula 03</div>
+  <h1>Como Ler um Texto Filosófico<span>: exercício com Epicuro</span></h1>
+  <p class="hero-sub">Aplicando as ferramentas de teoria do conhecimento das duas últimas aulas à leitura guiada de um texto primário curto</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Fundamentação: Reflexão, Realidade e Conhecimento</span>
+    <span class="meta-pill">Epicuro (Editora UNESP, 2002)</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar um método simples de leitura de texto filosófico primário e aplicá-lo à <em>Carta sobre a Felicidade (a Meneceu)</em>, de Epicuro, identificando nela o problema tratado, as definições propostas, a estrutura do argumento e o critério de verdade que o autor usa para sustentar suas conclusões.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Fechamos a aula anterior distinguindo duas fontes do saber — razão e experiência — e duas teorias da verdade — correspondência e coerência. Esta aula usa essas quatro ferramentas conceituais para algo mais prático: ler um texto filosófico primário e reconhecer, dentro dele, que postura epistemológica o autor assume, mesmo quando ele não a declara de forma explícita.</p>
+
+    <h3>Um método simples de leitura filosófica</h3>
+    <p>Ler filosofia de forma proveitosa não exige nenhum talento especial — exige um roteiro de perguntas feitas na ordem certa. O primeiro passo é identificar o problema central que o texto responde: toda obra filosófica, por mais que pareça dispersa, está tentando resolver uma pergunta específica, e encontrar essa pergunta é o que organiza tudo o que vem depois. O segundo passo é localizar as definições que o autor propõe para os termos-chave que usa — um argumento filosófico depende inteiramente do sentido preciso dado a palavras que, no uso comum, costumam ser vagas. O terceiro passo é mapear a estrutura do argumento: quais afirmações funcionam como premissas, aceitas ou defendidas antes, e qual conclusão o autor pretende que elas sustentem. O quarto passo, o que mais interessa a esta aula, é perguntar qual critério de verdade e qual fonte do saber o autor está mobilizando para justificar o que afirma — ele apela à razão, à experiência, a ambas, e a que teste (correspondência com um fato, coerência com um sistema de crenças) ele submete suas próprias conclusões?</p>
+
+    <h3>Epicuro e a Carta a Meneceu</h3>
+    <p>Epicuro foi um filósofo grego do período helenístico, fundador de uma escola em Atenas conhecida como "o Jardim", onde ensinava por meio de convivência direta com os discípulos e também por cartas — um formato que permitia condensar uma posição filosófica inteira em um texto curto, pensado para ser lido e relido. A <em>Carta a Meneceu</em>, reunida na edição bilíngue grego-português publicada pela Editora UNESP sob o título <em>Carta sobre a Felicidade</em>, responde a uma pergunta que qualquer pessoa pode reconhecer como sua: o que é preciso para viver bem, e é possível alcançar isso de forma segura?</p>
+
+    <p>A resposta de Epicuro passa por uma definição que costuma surpreender quem só conhece a palavra "epicurismo" pelo sentido popular que ela ganhou depois. Prazer, para Epicuro, tem um sentido técnico bem mais estreito do que a indulgência ou a busca irrestrita de sensações fortes que a palavra sugere hoje: trata-se de um estado de equilíbrio e tranquilidade, obtido pela ausência de dor no corpo e de perturbação na mente. O hedonismo epicurista não é a busca do prazer a qualquer custo — é a busca da ausência de perturbação, o que muda completamente que tipo de vida a filosofia está recomendando: uma vida de moderação e clareza sobre o que realmente causa sofrimento, não uma vida de excessos.</p>
+
+    <p>É aqui que entra o quarto passo do método de leitura. Para sustentar essa definição de felicidade, Epicuro não apela apenas a uma preferência pessoal — ele apoia sua ética em afirmações sobre a natureza. Ele argumenta que a alma é composta da mesma matéria que o resto do corpo e se dissolve com ele na morte, de modo que não há nada a temer depois de morrer: enquanto existimos, a morte não está presente; quando a morte chega, já não existimos para senti-la. Ele argumenta também que os deuses, se existem, não interferem nos assuntos humanos, retirando outro motivo comum de perturbação constante. Essas são teses sobre a realidade natural — sobre do que a alma é feita, sobre como a morte acontece — usadas como premissas para uma conclusão ética. O critério de verdade que sustenta essas premissas se apoia na observação do que os sentidos e a experiência efetivamente entregam: dor e prazer são, para Epicuro, os dados mais imediatos e confiáveis que existem, o ponto de partida a partir do qual qualquer julgamento sobre o que é bom ou ruim para uma vida deveria começar.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: lendo a Carta a Meneceu com o método proposto</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Leitura guiada · Aplicando os quatro passos à Carta a Meneceu</div>
+      <h3>Do problema à conclusão, passo a passo</h3>
+      <p>Aplicando o roteiro desta aula ao texto de Epicuro: o problema central é a pergunta pela vida boa e pelas condições para alcançá-la, e Epicuro deixa claro logo no início da carta que essa pergunta vale a pena em qualquer idade — não é assunto reservado a jovens que ainda têm tempo, nem a velhos que já viveram o bastante, porque cuidar da alma é sempre oportuno. A definição-chave é a de prazer como ausência de dor corporal e de perturbação mental, não como acúmulo de sensações agradáveis — uma definição que reorganiza toda a ética que se segue, porque desloca o alvo da vida boa de "ter mais experiências prazerosas" para "eliminar as fontes de sofrimento e medo". A estrutura do argumento parte de duas premissas sobre a natureza — a alma se dissolve com o corpo na morte, e os deuses não interferem na vida humana — para concluir que dois dos maiores medos humanos, o medo da morte e o medo dos deuses, são infundados, e que sua eliminação já é, por si, um avanço enorme rumo à tranquilidade. O critério de verdade que sustenta esse argumento inteiro é a experiência: Epicuro trata a sensação de dor e prazer como o dado mais direto e menos discutível disponível a qualquer pessoa, o piso sobre o qual qualquer teoria ética teria de se apoiar para não flutuar no vazio. O exercício mostra que um texto de mais de dois mil anos não escapa da pergunta que abriu este bloco inteiro: como sabemos algo sobre o mundo? Epicuro sustenta sua ética numa tese sobre a natureza e num critério de verdade apoiado na experiência sensível — a mesma pergunta pela teoria do conhecimento que vimos nas duas últimas aulas, agora reconhecida dentro de um texto concreto. É essa pergunta que o próximo encontro do curso retoma, aplicada a um novo objeto: não mais a vida boa, mas a realidade natural em si, na virada da cosmologia.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Identifique, na Carta a Meneceu, uma afirmação sobre a natureza que serve de base para uma conclusão ética. Qual é a premissa, e qual é a conclusão que ela sustenta?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Classifique o critério de verdade que Epicuro parece privilegiar — razão, experiência, ou os dois — e justifique com um elemento discutido em aula.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Compare a definição epicurista de "prazer" com o sentido que a palavra "epicurismo" tem hoje, no uso popular. O que muda entre uma e outra?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 03 · Aula 03 · Como Ler um Texto Filosófico: exercício com Epicuro</p>
+</div>
+
+</body>
+</html>

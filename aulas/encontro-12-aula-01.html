@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Husserl I: Fenomenologia e o Retorno às Coisas Mesmas — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 12 · Aula 01</div>
+  <h1>Husserl I: Fenomenologia<span> e o Retorno às Coisas Mesmas</span></h1>
+  <p class="hero-sub">Da liberdade de Sartre à raiz que a sustenta: a descoberta husserliana de que a consciência é sempre consciência de algo</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: O Mundo Percebido e o Ser-no-Mundo</span>
+    <span class="meta-pill">Husserl (Forense Universitária, 2012)</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar a fenomenologia de Edmund Husserl como raiz filosófica do existencialismo sartriano, e introduzir os conceitos de intencionalidade da consciência e do lema "voltar às coisas mesmas" como novo ponto de partida para pensar a relação entre consciência e mundo.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Encerramos o Encontro 11 com Sartre e o existencialismo, e fechamos aquela aula anunciando que Sartre não constrói sua filosofia da liberdade a partir do zero: ele é leitor atento de um filósofo alemão chamado Edmund Husserl, e o existencialismo francês do século XX tem raiz direta na fenomenologia husserliana. Antes de perguntar "o que é a liberdade humana", Sartre precisou responder a uma pergunta anterior, formulada por Husserl algumas décadas antes: o que é, afinal, a consciência, e como ela se relaciona com aquilo que existe fora dela? É a essa pergunta que voltamos agora, na origem.</p>
+
+    <p>Husserl escreve em um momento de crise: a filosofia do final do século XIX vinha reduzindo a consciência ora a um mecanismo psicológico como outro qualquer, explicável pelas mesmas leis causais que explicam objetos físicos, ora a um espectador isolado, trancado dentro de si mesmo, sem acesso seguro ao que existe fora dele. A fenomenologia nasce como resposta a esse impasse: uma forma de descrever com rigor como as coisas realmente se apresentam à consciência, sem aceitar de saída nem o reducionismo psicológico nem o isolamento do sujeito.</p>
+
+    <h3>A intencionalidade: consciência é sempre consciência de algo</h3>
+    <p>Um dos termos centrais de Husserl é a intencionalidade — palavra que, aqui, não tem o sentido comum de "propósito" ou "intenção" de fazer algo. Vem do latim <em>intendere</em>, apontar para, dirigir-se a. Para a fenomenologia, intencionalidade é a estrutura mais básica de qualquer ato de consciência: perceber é sempre perceber algo, lembrar é sempre lembrar de algo, imaginar é sempre imaginar algo, julgar é sempre julgar algo. Não existe consciência vazia, fechada sobre si mesma, contemplando apenas seus próprios conteúdos internos — toda consciência já está, por sua própria estrutura, dirigida para fora, voltada para um objeto.</p>
+
+    <p>Essa descoberta rompe com um modelo muito influente na filosofia moderna: o de Descartes, visto no Encontro 10. Descartes chega à certeza do <em>cogito</em> duvidando de tudo — do mundo externo, do próprio corpo, dos sentidos — até restar apenas a certeza de que existe um sujeito pensante, isolado, anterior e independente de qualquer mundo exterior comprovado. Husserl inverte essa lógica: não existe pensamento "puro", desconectado de objetos. Pensar é sempre pensar sobre algo; a consciência não tem um interior separado do mundo do qual ela é consciência. Onde Descartes isola o sujeito para depois reconquistar o mundo, Husserl mostra que o sujeito já nasce voltado para o mundo — a separação nunca chega a se consumar.</p>
+
+    <h3>Voltar às coisas mesmas</h3>
+    <p>O lema mais conhecido de Husserl — voltar às coisas mesmas — resume o método fenomenológico. A ideia é simples de enunciar e difícil de praticar: filosofias e ciências, com frequência, constroem teorias elaboradas sobre os objetos que estudam sem primeiro observar com atenção rigorosa como esses objetos efetivamente se mostram, se apresentam, à experiência — antes de qualquer teoria prévia ser encaixada sobre eles. Fazer fenomenologia é descrever com precisão essa aparição, suspendendo por um momento os pressupostos herdados para olhar de novo, com atenção disciplinada, para o que está diante da consciência.</p>
+
+    <p>Isso não é convite ao empirismo ingênuo, como se bastasse "olhar sem pensar". É um método de descrição rigorosa das estruturas da própria experiência — como algo aparece, sob que aspectos, em que sequência, com que grau de evidência. E é justamente essa exigência de atenção ao fenômeno, antes da teoria, que Sartre herda de Husserl: se a consciência é sempre intencional, sempre lançada para fora de si mesma em direção a possibilidades, ela não é uma essência fixa e fechada — é movimento constante em direção ao que ainda não é. Esse é o fio que liga a intencionalidade husserliana à afirmação sartriana de que a existência precede a essência: um humano não nasce com um roteiro pronto por dentro, porque a própria consciência, desde a raiz, já está voltada para fora, para o mundo e para as possibilidades que ele oferece.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: o historiador diante da fonte</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Método histórico · Suspender a teoria antes de ler o documento</div>
+      <h3>O que a fonte mostra antes de qualquer moldura</h3>
+      <p>Husserl não escreveu sobre método histórico, mas sua exigência de "voltar às coisas mesmas" ilumina um risco conhecido de quem trabalha com documentos do passado. Diante de uma carta, um processo judicial ou um registro paroquial, é tentador aplicar de imediato uma moldura teórica já pronta — uma narrativa nacional, um esquema de causas e consequências decidido antes mesmo da leitura — e encontrar no documento exatamente o que a teoria já esperava encontrar. A disciplina fenomenológica sugere outro percurso: suspender por um instante essa moldura e perguntar, primeiro, o que o próprio documento apresenta, em que termos, com que lacunas e ambiguidades — só depois construir a interpretação. É o mesmo tipo de atenção que exigimos, lá no Encontro 3, ao ler devagar a Carta sobre a Felicidade de Epicuro antes de julgá-la: o texto precisa ser visto antes de ser explicado.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Compare o ponto de partida de Descartes (o sujeito pensante isolado, que duvida do mundo externo) com o ponto de partida de Husserl (a consciência sempre intencional, sempre voltada para algo). O que muda na forma de entender a relação entre sujeito e mundo?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Explique com suas palavras por que o existencialismo de Sartre — "a existência precede a essência" — depende da noção husserliana de intencionalidade. O que aconteceria com a liberdade sartriana se a consciência fosse fechada em si mesma, e não intencional?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Avalie o caso do historiador diante da fonte: até que ponto é possível "suspender a teoria" antes de interpretar um documento? Existe leitura de fonte histórica totalmente livre de moldura prévia, ou isso é apenas um ideal metodológico?</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 12 · Aula 01 · Husserl I: Fenomenologia e o Retorno às Coisas Mesmas</p>
+</div>
+
+</body>
+</html>

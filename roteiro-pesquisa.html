@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Roteiro de Pesquisa Própria — Fundamentos do Pensamento Filosófico 2026.2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0e0e12; --surface: #16161e; --surface-2: #1e1e2a; --border: #2a2a3a;
+    --accent: #f59e0b; --accent-dim: #92610a; --teal: #38bdf8; --green: #4ade80;
+    --amber: #fbbf24; --red: #f87171; --purple: #7c6af7; --text: #e8e8f4; --muted: #7a7a9a;
+    --sans: 'Inter', system-ui, sans-serif; --mono: 'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 18px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+  .hero { padding: 64px 32px 48px; text-align: center; background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%), linear-gradient(180deg, #120f00 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 5px 16px; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 24px; font-family: var(--mono); }
+  .hero h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 880px; margin: 0 auto 16px; color: #ffffff; letter-spacing: -.02em; }
+  .hero h1 span { background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 640px; margin: 0 auto 32px; font-weight: 400; }
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .meta-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; color: var(--muted); }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+  .section-header { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+  .step-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent-dim), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; font-weight: 600; color: #fff; }
+  .section-header h2 { font-size: 1.5rem; font-weight: 800; color: #fff; line-height: 1.2; letter-spacing: -.01em; }
+  .duration { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--accent); background: #1e1a0a; border: 1px solid var(--accent-dim); border-radius: 6px; padding: 4px 14px; white-space: nowrap; font-family: var(--mono); }
+
+  .objetivo { border-left: 4px solid var(--teal); padding: 22px 26px; margin: 8px 0 24px; background: #0e1d26; border-radius: 0 10px 10px 0; font-size: 1.05rem; font-weight: 500; color: #d6f2ff; }
+  .highlight { border-left: 4px solid var(--teal); background: #0e1d26; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 500; color: var(--text); }
+  .highlight strong { color: var(--teal); }
+  .callout { border-left: 4px solid var(--amber); background: #1c1a10; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 24px 0; font-size: 1.02rem; font-weight: 600; color: #f5e6c0; }
+  .callout .callout-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); font-family: var(--mono); margin-bottom: 8px; }
+  .callout strong { color: #fff; }
+
+  .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 20px 0; }
+  .profile-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; font-size: .96rem; color: var(--text); }
+  .profile-card .p-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-family: var(--mono); margin-bottom: 8px; }
+
+  .activity { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px 30px; margin-bottom: 20px; }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .produto { border-left: 4px solid var(--green); background: #0f2010; border-radius: 0 10px 10px 0; padding: 16px 20px; margin-top: 16px; font-size: .95rem; color: #c8e8d0; }
+  .produto .prod-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); font-family: var(--mono); margin-bottom: 8px; }
+
+  /* TABELA DE CHECKPOINTS */
+  .tabela { width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .tabela th, .tabela td { padding: 12px 18px; text-align: left; font-size: .92rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .tabela th { background: var(--surface-2); font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .tabela td { background: var(--surface); }
+  .tabela tr:last-child td { border-bottom: none; }
+  .tabela td.num { font-family: var(--mono); font-weight: 700; color: var(--accent); white-space: nowrap; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.1rem; font-weight: 700; margin: 20px 0 10px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .timeline { margin: 8px 0; }
+  .tl-item { display: flex; gap: 20px; padding: 10px 0 10px 24px; border-left: 2px solid var(--border); position: relative; }
+  .tl-item::before { content: ''; position: absolute; left: -5px; top: 16px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  .tl-date { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--accent); min-width: 100px; }
+  .tl-text { font-size: 1rem; color: var(--text); font-weight: 500; }
+
+  .closing { margin-top: 64px; text-align: center; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-top: 4px solid var(--accent); border-radius: 0 0 16px 16px; }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+  .back-link { display: inline-block; margin-top: 16px; font-size: 13px; color: var(--teal); text-decoration: none; font-family: var(--mono); }
+  .back-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Roteiro de Pesquisa Própria</div>
+  <h1>Roteiro de <span>Pesquisa Própria</span></h1>
+  <p class="hero-sub">Cada aluno escolhe um problema ou processo histórico concreto e um filósofo/conceito-guia do curso, e usa o conceito para interpretar o problema escolhido — sem aplicar filosofia à história de forma decorativa.</p>
+  <div class="meta-row">
+    <span class="meta-pill">3 checkpoints parciais</span>
+    <span class="meta-pill">Texto final · 2-4 páginas</span>
+    <span class="meta-pill">Seminário · 5-8 min por aluno</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="projeto">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>O que é o Projeto</h2>
+    </div>
+    <p>Componente transversal nos moldes da "Fábrica de Conhecimento Sociológico", ancorado nos Blocos 3 e 4 (Encontros 7-14), quando os alunos já têm repertório suficiente — Platão, Aristóteles, Descartes, Marx, Adorno &amp; Horkheimer, Sartre e, na sequência, Husserl, Heidegger, Foucault, Deleuze — para escolher um conceito-guia com critério. Diferente do modelo de "semanas livres" de Sociologia Rural (curso de 16 encontros com 3 semanas inteiras dedicadas a campo), aqui a liberação é <strong>parcial</strong>: uma aula por encontro, em três encontros específicos — 45h é uma carga mais apertada para cobrir a Grécia Antiga ao mundo contemporâneo.</p>
+
+    <div class="objetivo">
+      <strong>Objetivo do projeto:</strong> usar um conceito filosófico como instrumento real de leitura de um processo histórico específico — não "aplicar filosofia à história" de forma decorativa.
+    </div>
+
+    <p>Exemplos de conceito-guia (não exaustivo — qualquer autor do curso serve, desde que o aluno domine o conceito o suficiente para usá-lo com precisão):</p>
+
+    <div class="profile-grid">
+      <div class="profile-card"><div class="p-label">Platão</div>Mito da Caverna → um momento histórico de ruptura entre uma "visão de mundo" dominante e uma nova forma de conhecimento que a contesta</div>
+      <div class="profile-card"><div class="p-label">Aristóteles</div>Zóon politikon, política e historicidade da pólis → a formação de uma comunidade política concreta em algum momento histórico</div>
+      <div class="profile-card"><div class="p-label">Descartes</div>Dúvida metódica, ruptura com a tradição → um movimento histórico de ruptura com uma autoridade de conhecimento estabelecida</div>
+      <div class="profile-card"><div class="p-label">Marx</div>Materialismo histórico, ideologia → como interesses materiais/de classe aparecem disfarçados de ideia neutra em algum episódio histórico</div>
+      <div class="profile-card"><div class="p-label">Adorno &amp; Horkheimer</div>Razão instrumental → um episódio em que "progresso técnico" produziu resultado moralmente catastrófico</div>
+      <div class="profile-card"><div class="p-label">Sartre</div>Liberdade, "o homem como projeto" → uma escolha histórica individual em contexto de coerção extrema (ex.: resistência, colaboração, exílio)</div>
+      <div class="profile-card"><div class="p-label">Heidegger</div>Temporalidade, consciência histórica → como um grupo histórico específico narrou seu próprio passado/futuro de forma a justificar o presente</div>
+      <div class="profile-card"><div class="p-label">Foucault</div>Genealogia, heterotopias → a história de uma instituição ou espaço concreto (prisão, hospital, escola, fronteira) como dispositivo de poder</div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="checkpoints">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Cronograma de Checkpoints</h2>
+    </div>
+    <table class="tabela">
+      <thead>
+        <tr><th>Checkpoint</th><th>Encontro</th><th>O que entrega</th><th>Por que nesse momento</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">C1 — Escolha do tema e do filósofo-conceito-guia</td>
+          <td>Encontro 10, Aula 3 (11/11/2026)</td>
+          <td>Problema/processo histórico escolhido + 1 filósofo-conceito-guia, com justificativa breve (3-5 linhas) do porquê esse conceito ilumina esse problema</td>
+          <td>Platão, Aristóteles e Descartes já foram trabalhados (Bloco 3 até aqui); Marx, Adorno &amp; Horkheimer e Sartre vêm logo a seguir no mesmo encontro — o aluno já tem um leque amplo de autores para escolher com critério</td>
+        </tr>
+        <tr>
+          <td class="num">C2 — Levantamento de fontes e leitura do material</td>
+          <td>Encontro 12, Aula 3 (25/11/2026)</td>
+          <td>Lista de 2-3 fontes históricas (primárias ou secundárias) sobre o problema escolhido + registro de leitura inicial do texto filosófico do conceito-guia</td>
+          <td>Logo após Husserl (fenomenologia, mundo da vida), que ajuda o aluno a distinguir descrição do fenômeno histórico de interpretação teórica dele</td>
+        </tr>
+        <tr>
+          <td class="num">C3 — Rascunho final da investigação</td>
+          <td>Encontro 14, Aula 3 (09/12/2026)</td>
+          <td>Texto conectando o problema histórico ao conceito-guia (rascunho, não versão final)</td>
+          <td>Logo após Heidegger e antes de Foucault/Deleuze — o aluno já viu temporalidade e espacialidade, ferramentas úteis para amarrar o texto final</td>
+        </tr>
+        <tr>
+          <td class="num">Entrega final + Apresentação</td>
+          <td>Encontro 15, Aulas 2-3 (16/12/2026)</td>
+          <td>Texto final (2-4 páginas) + apresentação de 5-8 min em seminário</td>
+          <td>Fecha o projeto no encontro de síntese geral do curso</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="texto-final">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Estrutura do Texto Final (2-4 páginas)</h2>
+    </div>
+    <ol>
+      <li>Apresentação breve do problema/processo histórico escolhido</li>
+      <li>Por que esse filósofo/conceito foi escolhido para interpretá-lo</li>
+      <li>A análise: como o conceito ilumina o problema histórico — incluindo, quando pertinente, os limites do conceito (o que ele não explica, ou explica mal)</li>
+      <li>Um parágrafo final: o que essa leitura filosófica muda na forma como o aluno entende aquele processo histórico</li>
+    </ol>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="apresentacao">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Formato da Apresentação</h2>
+      <span class="duration">Encontro 15 · 16/12</span>
+    </div>
+    <p><strong>Formato:</strong> 5-8 minutos por aluno + 2-3 minutos de perguntas.</p>
+
+    <h3>Estrutura sugerida</h3>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-date">1 min</span><span class="tl-text">O problema histórico</span></div>
+      <div class="tl-item"><span class="tl-date">1-2 min</span><span class="tl-text">O conceito-guia</span></div>
+      <div class="tl-item"><span class="tl-date">3-4 min</span><span class="tl-text">A análise: como o conceito ilumina o problema histórico</span></div>
+      <div class="tl-item"><span class="tl-date">1 min</span><span class="tl-text">O que muda no modo de pensar o processo</span></div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="criterios">
+    <div class="section-header">
+      <div class="step-num">05</div>
+      <h2>Critérios de Avaliação Sugeridos</h2>
+    </div>
+    <ul>
+      <li>Precisão no uso do conceito filosófico (não é decorativo nem forçado)</li>
+      <li>Consistência do argumento histórico (evidência real, não fabricada)</li>
+      <li>Capacidade de reconhecer os limites do próprio conceito-guia aplicado ao caso</li>
+      <li>Clareza da apresentação</li>
+    </ul>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="nota-pedagogica">
+    <div class="section-header">
+      <div class="step-num">06</div>
+      <h2>Nota Pedagógica</h2>
+    </div>
+    <p>O trabalho não exige domínio de historiografia especializada — o "problema histórico" pode vir do repertório que o próprio aluno de História já tem de outras disciplinas do curso. O que este projeto pede de novo é o uso disciplinado de um conceito filosófico como instrumento de leitura, não como referência solta.</p>
+    <div class="callout">
+      <div class="callout-label">Formato completo</div>
+      O formato exato do trabalho (tema histórico + conceito filosófico-guia, texto de 2-4 páginas, 5-8 min de apresentação) segue o padrão já usado em Sociologia Rural e Antropologia Filosófica, adaptado à carga horária mais apertada de 45h.
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Curso de História · Roteiro de Pesquisa Própria</p>
+    <a class="back-link" href="aulas/index.html">&larr; Voltar para o índice de aulas</a>
+  </div>
+
+</div>
+</body>
+</html>

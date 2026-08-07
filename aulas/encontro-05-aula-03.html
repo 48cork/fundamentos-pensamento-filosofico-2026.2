@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gehlen: o Homem como "Ser Carente" — Fundamentos do Pensamento Filosófico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 64px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; }
+  .section { margin-top: 64px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  .duration {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 4px 14px;
+    white-space: nowrap;
+    font-family: var(--mono);
+  }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text);
+    font-style: normal;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .objetivo {
+    border-left: 4px solid var(--teal);
+    padding: 22px 26px;
+    margin: 8px 0;
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d6f2ff;
+  }
+
+  .highlight {
+    border-left: 4px solid var(--teal);
+    background: #0e1d26;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .highlight strong { color: var(--teal); }
+
+  .callout {
+    border-left: 4px solid var(--amber);
+    background: #1c1a10;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f5e6c0;
+  }
+  .callout .callout-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+  .callout strong { color: #fff; }
+
+  .callout-red {
+    border-left: 4px solid var(--red);
+    background: #1c1010;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d0d0;
+  }
+  .callout-red strong { color: var(--red); }
+
+  .caso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 12px;
+  }
+  .caso .caso-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: var(--mono);
+    margin-bottom: 12px;
+  }
+  .caso h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .caso .leitura {
+    border-left: 4px solid var(--accent);
+    background: var(--surface-2);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .95rem;
+    color: #c8c8e8;
+  }
+  .caso .leitura .l-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: var(--mono);
+    margin-bottom: 8px;
+  }
+
+  .activity {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
+  .activity.green  { border-left: 5px solid var(--green); }
+  .activity.blue   { border-left: 5px solid var(--teal); }
+  .activity.purple { border-left: 5px solid var(--purple); }
+  .activity.amber  { border-left: 5px solid var(--amber); }
+
+  .activity-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .activity-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .activity-icon.green  { background: #0f2010; }
+  .activity-icon.blue   { background: #0f1e2a; }
+  .activity-icon.purple { background: #1a1030; }
+  .activity-icon.amber  { background: #1c1a10; }
+  .activity h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin: 0; }
+
+  .debate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .debate-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 22px;
+  }
+  .debate-card .vs {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-family: var(--mono);
+    margin-bottom: 10px;
+  }
+  .debate-card p { font-size: .96rem; color: #c8c8e0; line-height: 1.65; margin-bottom: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #1a1a0e; }
+  th {
+    padding: 12px 18px; text-align: left; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--border); font-family: var(--mono);
+  }
+  td { padding: 12px 18px; font-size: .96rem; border-bottom: 1px solid #1e1e2a; vertical-align: top; line-height: 1.6; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #17170e; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+  p { margin-bottom: 16px; }
+  ul, ol { padding-left: 26px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 1rem; line-height: 1.7; }
+  h3 { font-size: 1.15rem; font-weight: 700; margin: 26px 0 12px; color: #fff; }
+  strong { color: #e8e8ff; }
+  em { color: #d6d6f0; }
+
+  .closing {
+    margin-top: 64px;
+    text-align: center;
+    padding: 40px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · Encontro 05 · Aula 03</div>
+  <h1>Gehlen<span>: o Homem como "Ser Carente"</span></h1>
+  <p class="hero-sub">A terceira resposta do encontro à mesma pergunta: natureza deficitária e compensação pela cultura e pelas instituições</p>
+  <div class="meta-row">
+    <span class="meta-pill">60 min</span>
+    <span class="meta-pill">Bloco: Da Cosmologia à Antropologia Filosófica</span>
+    <span class="meta-pill">Gehlen (via Rocha, UFF)</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <section class="section" id="objetivo">
+    <div class="section-header">
+      <div class="step-num">01</div>
+      <h2>Objetivo da Aula</h2>
+    </div>
+    <div class="objetivo">Apresentar a resposta de Arnold Gehlen à pergunta pelo que distingue o ser humano, retomando as respostas de Scheler e de Plessner: o homem como "ser carente" (<em>Mängelwesen</em>), biologicamente mal-equipado em comparação com outros animais, e que compensa essa carência pela cultura e pelas instituições.</div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="conteudo">
+    <div class="section-header">
+      <div class="step-num">02</div>
+      <h2>Conteúdo</h2>
+    </div>
+
+    <p>Scheler respondeu à pergunta pelo que distingue o ser humano com a noção de espírito, uma capacidade positiva e exclusiva de se distanciar da vida e se abrir ao mundo. Plessner respondeu à mesma pergunta olhando para a estrutura de organização do corpo vivo, e encontrou a diferença na excentricidade posicional — a capacidade humana de se relacionar consigo mesmo a partir de fora do próprio centro. Arnold Gehlen parte da mesma pergunta que os dois anteriores, mas inverte o ponto de partida: em vez de descrever uma capacidade positiva exclusiva do humano, ele começa pela carência biológica do ser humano em comparação com os outros animais. Como no caso de Plessner, a obra central de Gehlen sobre o tema não tem edição integral em português; a apresentação abaixo segue a tradução parcial produzida por Clarissa Marinho da Rocha em sua dissertação de mestrado na UFF.</p>
+
+    <h3>Um animal mal-equipado biologicamente</h3>
+    <p>Comparado a praticamente qualquer outro mamífero, o ser humano nasce em condição de desvantagem orgânica considerável: sem pelagem espessa o suficiente para proteção térmica plena, sem garras ou dentes especializados para caça ou defesa, sem os órgãos sensoriais aguçados de muitos predadores, e sobretudo sem um repertório de instintos fixos que o guiem automaticamente diante das situações típicas de um ambiente determinado. Um animal instintivamente programado nasce, em certo sentido, já ajustado ao seu nicho: sabe, sem aprender, o que comer, como se defender, como se reproduzir dentro de um padrão relativamente fixo. O ser humano nasce sem esse ajuste automático a um ambiente específico — e é exatamente essa falta de especialização orgânica e instintiva que Gehlen chama de carência, ou <em>Mängelwesen</em>, "ser carente" ou "ser deficitário".</p>
+
+    <h3>Instituições como segunda natureza</h3>
+    <p>Para Gehlen, é essa mesma carência biológica — não uma capacidade espiritual positiva, como em Scheler, nem uma estrutura posicional privilegiada, como em Plessner — que obriga o ser humano a agir, construir e organizar seu próprio ambiente por meios que nenhum outro animal precisa: a técnica, a linguagem, a cultura e, de forma central, as instituições. Onde o instinto guiaria automaticamente um animal, o ser humano precisa construir regras, costumes, rituais e leis que cumpram função equivalente — orientar o comportamento, estabilizar expectativas, tornar a vida em grupo previsível. É nesse sentido que Gehlen descreve as instituições como uma espécie de segunda natureza: elas substituem, no plano cultural, o que o instinto faria no plano biológico em outras espécies, dando ao ser humano carente a estabilidade que sua própria biologia não oferece.</p>
+
+    <p>Colocadas lado a lado, as três respostas deste encontro divergem exatamente no ponto de partida: Scheler parte de uma capacidade positiva (o espírito) que se acrescenta à vida; Plessner parte de uma estrutura posicional do próprio corpo vivo (a excentricidade); Gehlen parte de uma carência orgânica que precisa ser compensada (a cultura como segunda natureza). As três, no entanto, convergem em algo — nenhuma delas trata o humano como "mais um animal entre outros", e todas concordam que existe, no ser humano, uma relação com o próprio ambiente diferente da relação instintiva e fechada dos demais animais.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="caso">
+    <div class="section-header">
+      <div class="step-num">03</div>
+      <h2>Caso: rituais de passagem como orientação onde falta o instinto</h2>
+    </div>
+
+    <div class="caso">
+      <div class="caso-label">Caso · Diversas sociedades históricas · Instituição como compensação</div>
+      <h3>Marcar a passagem de fase que o instinto não marca</h3>
+      <p>Diferentes sociedades ao longo da história desenvolveram rituais de passagem para marcar transições como a entrada na vida adulta, o casamento ou o luto — cerimônias, regras e expectativas sociais que orientam o comportamento dos indivíduos em momentos que, em outras espécies, seriam resolvidos automaticamente por mudanças hormonais e instintivas, sem necessidade de qualquer construção cultural. Um leão não precisa de um ritual para "saber" que chegou à maturidade sexual e deve se afastar do grupo natal; um ser humano, carente desse tipo de orientação instintiva fixa, precisa que a própria sociedade construa e transmita esses marcadores de passagem através de instituições — cerimônias religiosas, cerimônias civis, tradições familiares. Lido com os olhos de Gehlen, cada um desses rituais é uma peça de segunda natureza: uma estrutura cultural construída exatamente para preencher o vazio deixado pela ausência de instinto fixo, dando à vida humana a previsibilidade que sua biologia carente não fornece sozinha.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="section" id="debate">
+    <div class="section-header">
+      <div class="step-num">04</div>
+      <h2>Perguntas para Discussão</h2>
+    </div>
+
+    <div class="debate-grid">
+      <div class="debate-card">
+        <div class="vs">Pergunta 01</div>
+        <p>Descreva uma instituição do seu próprio cotidiano (familiar, escolar, religiosa, jurídica) que, na leitura de Gehlen, funcione como "segunda natureza" — orientando um comportamento que o instinto não orienta sozinho.</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 02</div>
+        <p>Aplique as três respostas deste encontro — espírito (Scheler), excentricidade (Plessner), carência compensada por instituições (Gehlen) — a um único exemplo concreto de comportamento humano: como cada autor explicaria o mesmo gesto?</p>
+      </div>
+      <div class="debate-card">
+        <div class="vs">Pergunta 03</div>
+        <p>Avalie: a tese de Gehlen, ao descrever o ser humano como biologicamente "carente" em vez de espiritualmente superior, muda de alguma forma a maneira como pensamos sobre a dignidade ou o valor do ser humano? Justifique sua avaliação.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="closing">
+  <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Encontro 05 · Aula 03 · Gehlen: o Homem como "Ser Carente"</p>
+</div>
+
+</body>
+</html>

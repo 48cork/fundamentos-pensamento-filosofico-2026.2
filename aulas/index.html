@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Índice de Aulas — Fundamentos do Pensamento Filosófico 2026.2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:          #0e0e12;
+    --surface:     #16161e;
+    --surface-2:   #1e1e2a;
+    --border:      #2a2a3a;
+    --accent:      #f59e0b;
+    --accent-dim:  #92610a;
+    --teal:        #38bdf8;
+    --green:       #4ade80;
+    --amber:       #fbbf24;
+    --red:         #f87171;
+    --purple:      #7c6af7;
+    --text:        #e8e8f4;
+    --muted:       #7a7a9a;
+    --sans:        'Inter', system-ui, sans-serif;
+    --mono:        'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 72px 32px 48px;
+    text-align: center;
+    background: radial-gradient(ellipse 90% 70% at 50% -10%, #3a2a0a38 0%, transparent 70%),
+                linear-gradient(180deg, #120f00 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #1e1a0a;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-family: var(--mono);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 880px;
+    margin: 0 auto 16px;
+    color: #ffffff;
+    letter-spacing: -.02em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #f59e0b 0%, var(--teal) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto 32px;
+    font-weight: 400;
+  }
+
+  .meta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+  .meta-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* LAYOUT */
+  .wrapper { max-width: 880px; margin: 0 auto; padding: 48px 32px 80px; }
+
+  /* ENCONTRO BLOCK */
+  .encontro-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+  }
+
+  .encontro-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .encontro-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-dim), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .encontro-head h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+  }
+
+  .encontro-tag {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-family: var(--mono);
+    padding: 4px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .encontro-tag.livre {
+    color: var(--teal);
+    background: #0e1d26;
+    border: 1px solid #1e4a6a;
+  }
+
+  .encontro-tag.checkpoint {
+    color: var(--purple);
+    background: #1a1030;
+    border: 1px solid #3a2a6a;
+  }
+
+  .encontro-tag.seminario {
+    color: var(--green);
+    background: #0f2010;
+    border: 1px solid #1e4a2a;
+  }
+
+  /* AULA LIST */
+  .aula-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+  .aula-list li a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .15s, color .15s;
+  }
+
+  .aula-list li a:hover {
+    background: var(--surface-2);
+  }
+
+  .aula-list li a:hover .aula-title {
+    color: var(--accent);
+  }
+
+  .aula-tag {
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px 9px;
+    min-width: 78px;
+    text-align: center;
+  }
+
+  .aula-tag.extra {
+    color: var(--amber);
+    background: #1c1a10;
+    border-color: var(--accent-dim);
+  }
+
+  .aula-tag.checkpoint {
+    color: var(--purple);
+    background: #1a1030;
+    border-color: #3a2a6a;
+  }
+
+  .aula-tag.seminario {
+    color: var(--green);
+    background: #0f2010;
+    border-color: #1e4a2a;
+  }
+
+  .aula-title {
+    font-size: .98rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+    transition: color .15s;
+  }
+
+  .aula-list li.empty a {
+    opacity: .4;
+    pointer-events: none;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0 32px; }
+
+  .block-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--mono);
+    margin: 40px 0 16px;
+    padding-left: 4px;
+  }
+
+  .block-label:first-child { margin-top: 0; }
+
+  /* CLOSING */
+  .closing {
+    margin-top: 48px;
+    text-align: center;
+    padding: 36px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 0 0 16px 16px;
+  }
+  .closing-footer { font-size: 12px; color: var(--muted); font-family: var(--mono); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Fundamentos do Pensamento Filosófico · Curso de História · 2026.2</div>
+  <h1>Índice de<br><span>Aulas</span></h1>
+  <p class="hero-sub">15 encontros, 45 aulas — clique em qualquer título abaixo para abrir o texto completo da aula</p>
+  <div class="meta-row">
+    <span class="meta-pill">15 encontros</span>
+    <span class="meta-pill">45 aulas</span>
+    <span class="meta-pill">3 checkpoints de pesquisa</span>
+    <span class="meta-pill">Seminário final</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <div class="block-label">Bloco 1 · Fundamentação: Reflexão, Realidade, Conhecimento</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">01</div>
+      <h2>O que é Filosofia?</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-01-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">O que é filosofia? Do espanto (thaumazein) à atitude filosófica — mito e logos</span></a></li>
+      <li><a href="encontro-01-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Filosofia, ciência, religião e senso comum: fronteiras e diferenças</span></a></li>
+      <li><a href="encontro-01-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Por que um historiador precisa de filosofia? Pensamento crítico como ferramenta de ofício</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">02</div>
+      <h2>A Natureza do Pensamento Filosófico</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-02-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">A natureza do pensamento filosófico: as grandes áreas (metafísica, epistemologia, ética, lógica, estética) — Bochenski e as "diretrizes" do pensar filosófico</span></a></li>
+      <li><a href="encontro-02-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Reflexão e realidade: o que significa "pensar sobre o pensar"</span></a></li>
+      <li><a href="encontro-02-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Exercício: identificando um problema filosófico dentro de um problema histórico</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">03</div>
+      <h2>Teoria do Conhecimento</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-03-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Teoria do conhecimento I: dogmatismo, ceticismo, criticismo</span></a></li>
+      <li><a href="encontro-03-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Teoria do conhecimento II: fontes do saber — razão, experiência, verdade como correspondência e como coerência</span></a></li>
+      <li><a href="encontro-03-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Como ler um texto filosófico: exercício de leitura com a Carta sobre a Felicidade, de Epicuro</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 2 · Da Cosmologia à Antropologia Filosófica</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">04</div>
+      <h2>Cosmologias Antigas</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-04-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Cosmologias antigas: do mito cosmogônico à ideia de physis</span></a></li>
+      <li><a href="encontro-04-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Casini e as filosofias da natureza: da Antiguidade à Revolução Científica — um panorama histórico</span></a></li>
+      <li><a href="encontro-04-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Por que uma "filosofia da natureza" sempre termina perguntando pelo humano?</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">05</div>
+      <h2>Antropologia Filosófica I</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-05-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Scheler: a posição do homem no cosmos — o que distingue o humano dos outros seres vivos?</span></a></li>
+      <li><a href="encontro-05-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Plessner: a excentricidade posicional — o homem como o ser que se relaciona consigo mesmo</span></a></li>
+      <li><a href="encontro-05-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Gehlen: o homem como "ser carente" — natureza deficitária e compensação pela cultura e pelas instituições</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">06</div>
+      <h2>Antropologia Filosófica II</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-06-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Cassirer: o homem como animal simbólico — linguagem, mito e história como formas simbólicas</span></a></li>
+      <li><a href="encontro-06-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Da natureza à história: por que a antropologia filosófica desemboca na pergunta pela historicidade</span></a></li>
+      <li><a href="encontro-06-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Síntese do Bloco 2: da cosmologia grega ao humano como ser histórico-simbólico — preparando a virada para a Grécia Antiga</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 3 · Da Grécia Antiga ao Mundo Contemporâneo</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">07</div>
+      <h2>Nascimento da Filosofia Grega</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-07-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Do mito ao logos: os pré-socráticos e a pergunta pelo arché (Tales, Anaximandro, Anaxímenes)</span></a></li>
+      <li><a href="encontro-07-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Heráclito e Parmênides: o problema do movimento e do ser — a primeira grande disputa da filosofia</span></a></li>
+      <li><a href="encontro-07-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Sócrates: a virada antropológica, a maiêutica e o "conhece-te a ti mesmo"</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">08</div>
+      <h2>Platão</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-08-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Platão I: a Teoria das Formas e o Mito da Caverna</span></a></li>
+      <li><a href="encontro-08-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Platão II: A República — justiça, política e a cidade ideal</span></a></li>
+      <li><a href="encontro-08-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Platão na história das ideias: recepção, crítica, e por que ele ainda importa para quem estuda história</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">09</div>
+      <h2>Aristóteles</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-09-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Aristóteles I: metafísica, lógica e a crítica ao mestre</span></a></li>
+      <li><a href="encontro-09-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Aristóteles II: Ética a Nicômaco — virtude e eudaimonia</span></a></li>
+      <li><a href="encontro-09-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Aristóteles III: política, historicidade da pólis e o "zóon politikon"</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">10</div>
+      <h2>Descartes e a Modernidade</h2>
+      <span class="encontro-tag checkpoint">Checkpoint 1</span>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-10-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Descartes I: a dúvida metódica e o cogito</span></a></li>
+      <li><a href="encontro-10-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Descartes II: racionalismo e o marco entre "medieval" e "moderno" — filosofia como periodização histórica</span></a></li>
+      <li><a href="encontro-10-aula-03.html"><span class="aula-tag checkpoint">Checkpoint</span><span class="aula-title">Orientação de pesquisa — Checkpoint 1: escolha do tema e do filósofo/conceito-guia da investigação própria</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">11</div>
+      <h2>Filosofia Crítica Contemporânea</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-11-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Marx: materialismo histórico, práxis e ideologia</span></a></li>
+      <li><a href="encontro-11-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Adorno &amp; Horkheimer: Dialética do Esclarecimento — razão instrumental e a crítica ao mito do progresso</span></a></li>
+      <li><a href="encontro-11-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Sartre: existencialismo, liberdade e "o homem como projeto"</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Bloco 4 · O Mundo Percebido e o Ser-no-Mundo</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">12</div>
+      <h2>Fenomenologia I</h2>
+      <span class="encontro-tag checkpoint">Checkpoint 2</span>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-12-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Husserl I: a fenomenologia e o "voltar às coisas mesmas" — a intencionalidade da consciência</span></a></li>
+      <li><a href="encontro-12-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Husserl II: o mundo da vida (Lebenswelt) — crítica ao objetivismo científico</span></a></li>
+      <li><a href="encontro-12-aula-03.html"><span class="aula-tag checkpoint">Checkpoint</span><span class="aula-title">Orientação de pesquisa — Checkpoint 2: levantamento de fontes e leitura do material escolhido</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">13</div>
+      <h2>Fenomenologia II</h2>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-13-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Heidegger I: Ser e Tempo — o Dasein e o ser-no-mundo (In-der-Welt-sein)</span></a></li>
+      <li><a href="encontro-13-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Heidegger II: temporalidade — passado, presente, futuro como estrutura existencial, e a consciência histórica</span></a></li>
+      <li><a href="encontro-13-aula-03.html"><span class="aula-tag">Aula 3</span><span class="aula-title">Heidegger III: espacialidade do Dasein — lugar, mundo circundante (Umwelt) e território</span></a></li>
+    </ul>
+  </div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">14</div>
+      <h2>Espacialidade, Temporalidade e História</h2>
+      <span class="encontro-tag checkpoint">Checkpoint 3</span>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-14-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Foucault: heterotopias, genealogia e a história como arqueologia do presente</span></a></li>
+      <li><a href="encontro-14-aula-02.html"><span class="aula-tag">Aula 2</span><span class="aula-title">Deleuze (Conversações): devir, tempo não-linear e o desafio à narrativa histórica tradicional</span></a></li>
+      <li><a href="encontro-14-aula-03.html"><span class="aula-tag checkpoint">Checkpoint</span><span class="aula-title">Orientação de pesquisa — Checkpoint 3: rascunho final da investigação antes da apresentação</span></a></li>
+    </ul>
+  </div>
+
+  <div class="block-label">Encontro 15 · Fechamento e Apresentação de Pesquisas</div>
+
+  <div class="encontro-block">
+    <div class="encontro-head">
+      <div class="encontro-num">15</div>
+      <h2>Fechamento e Apresentação de Pesquisas</h2>
+      <span class="encontro-tag seminario">Seminário</span>
+    </div>
+    <ul class="aula-list">
+      <li><a href="encontro-15-aula-01.html"><span class="aula-tag">Aula 1</span><span class="aula-title">Rancière, O Mestre Ignorante — emancipação intelectual como fechamento simbólico do curso</span></a></li>
+      <li><a href="encontro-15-aula-02.html"><span class="aula-tag seminario">Seminário</span><span class="aula-title">Apresentação dos projetos de pesquisa dos alunos (seminário) — parte 1</span></a></li>
+      <li><a href="encontro-15-aula-03.html"><span class="aula-tag seminario">Seminário</span><span class="aula-title">Apresentação dos projetos de pesquisa dos alunos (seminário) — parte 2 + síntese geral do curso</span></a></li>
+    </ul>
+  </div>
+
+  <div class="closing">
+    <p class="closing-footer">Fundamentos do Pensamento Filosófico 2026.2 · Curso de História · Índice de Aulas · 45 arquivos</p>
+  </div>
+
+</div>
+</body>
+</html>
