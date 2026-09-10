@@ -15,8 +15,8 @@ Acesso: livro didático, amplamente disponível em livrarias, Estante Virtual, A
 **BOCHENSKI, I. M.** *Diretrizes do Pensamento Filosófico*. Versão portuguesa de Alfredo Simon. Editora Herder, 1961.
 🟡 **NÃO CONFIRMADO:** local exato de publicação da Herder (provavelmente São Paulo, não confirmado com segurança nas fontes consultadas) — conferir no exemplar físico antes de citar em material oficial. Acesso: fora de catálogo, só em sebos (Estante Virtual, Sebo Claraboia, MercadoLivre). Uso: Encontro 2, "diretrizes" do pensar filosófico.
 
-**BONJOUR, Laurence; BAKER, Ann.** *Philosophy: Classical Problems and Contemporary Arguments*.
-🔴 **NÃO CONFIRMADO:** nenhuma tradução brasileira localizada em nenhuma fonte pesquisada (editoras, sebos, Portal CAPES). A obra circula em inglês. **Recomendação:** ou manter a leitura em inglês (viável para trecho curto/comentado em aula), ou substituir por antologia comentada nacional equivalente antes de formalizar o material do Encontro 3 — decisão do docente.
+**BONJOUR, Laurence; BAKER, Ann.** *Filosofia: textos fundamentais comentados*. Tradução de Roberto Hofmeister Pich et al. 2. ed. Porto Alegre: Artmed, 2010. 776 p. ISBN 9788536321196.
+Tradução brasileira confirmada conforme os dados bibliográficos fornecidos pelo docente. Obra mantida via edição em português, sem necessidade de substituição por outra antologia. Uso: Encontro 3.
 
 **EPICURO.** *Carta sobre a Felicidade (a Meneceu)*. Trad. Álvaro Lorencini e Enzo Del Carratore. São Paulo: Editora UNESP, 2002 (edição bilíngue grego-português).
 Acesso: 🟢 também disponível em acesso aberto via SciELO Books, além de livrarias. Uso: Encontro 3, Aula 3 — exercício de leitura de texto primário curto.
@@ -108,7 +108,7 @@ Acesso: acervo padrão; sebos e livrarias. Uso: leitura de apoio geral, sem enco
 
 ## Observações gerais
 
-- Nenhuma citação foi inventada. Vinte dos vinte e cinco itens (incluindo Sartre, verificado à parte) têm edição brasileira ou luso-brasileira confirmada via busca. Quatro ficaram **NÃO CONFIRMADO** mesmo após checagem — Bochenski (local de publicação), Bonjour & Baker (sem tradução BR), Casini (tradutor/ano divergente entre fontes) e Plessner (sem tradução integral) — e um quinto, Gehlen, só tem tradução parcial disponível. Em todos os cinco casos, a recomendação de contorno está registrada acima, em vez de eu arriscar um dado.
+- Nenhuma citação foi inventada. A verificação original registrou vinte dos vinte e cinco itens (incluindo Sartre, verificado à parte) com edição brasileira ou luso-brasileira confirmada via busca. Posteriormente, o docente confirmou a tradução brasileira de Bonjour & Baker (Artmed/Penso, 2ª ed., 2010, ISBN 9788536321196), resolvendo essa pendência. Permanecem três itens **NÃO CONFIRMADO** — Bochenski (local de publicação), Casini (tradutor/ano divergente entre fontes) e Plessner (sem tradução integral) — e Gehlen só tem tradução parcial disponível. Para essas quatro pendências, as recomendações de contorno estão registradas acima.
 - **Correção de autoria:** "Prado Júnior" citado no prompt original é **Caio Prado Jr.**, não Bento Prado Jr. — os dois são autores brasileiros distintos e a busca confirmou qual dos dois escreveu *O Que É Filosofia* (Coleção Primeiros Passos).
 - **Item que faltou na leva original de verificação:** Sartre (*O Existencialismo é um Humanismo*) estava na bibliografia da chefia e no Encontro 11, mas não entrou no primeiro lote de busca — verificado separadamente acima antes de fechar este arquivo.
 - Platão, Jaspers e Casini são edições portuguesas (não brasileiras) — presentes no acervo comum de bibliotecas universitárias brasileiras, mas vale avisar os alunos que a ortografia/vocabulário segue o padrão de Portugal.

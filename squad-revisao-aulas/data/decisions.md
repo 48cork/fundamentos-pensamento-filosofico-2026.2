@@ -1,6 +1,6 @@
 # Decisões do projeto
 
-Registro extraído dos documentos existentes. As fontes não informam as datas das decisões nem um histórico de alternativas deliberadas; por isso, não são atribuídas datas ou alternativas descartadas. Regras do protocolo, resultados da revisão e pendências estão separados abaixo.
+Registro extraído dos documentos existentes, com atualização posterior fornecida pelo docente. As fontes originais não informam as datas das decisões nem um histórico de alternativas deliberadas; por isso, esses dados só são registrados quando explicitamente disponíveis. Regras do protocolo, resultados da revisão e decisões resolvidas estão separados abaixo.
 
 ## Regras adotadas
 
@@ -57,9 +57,11 @@ Registro extraído dos documentos existentes. As fontes não informam as datas d
 - Este é o resultado da revisão documentada, não uma nova auditoria nem uma aprovação automática de futuras alterações.
 - Fonte: [Relatório final, Resumo executivo e Veredito final das 45 aulas](../../relatorio_final.md).
 
-## Questão em aberto
+## Decisões resolvidas
 
 ### Bibliografia de Bonjour & Baker
-- O relatório informa que não havia tradução brasileira confirmada. Manter a obra em inglês ou substituí-la por antologia nacional equivalente permanece como decisão do docente.
-- Nenhuma das duas alternativas está registrada como escolhida ou descartada.
-- Fonte: [Relatório final, Observações não bloqueantes para referência futura](../../relatorio_final.md).
+
+- Contexto original: o relatório informava que não havia tradução brasileira confirmada e deixava ao docente a decisão entre manter a obra em inglês ou substituí-la por antologia nacional equivalente.
+- Resolução (2026-09-10): o docente confirmou a existência de tradução brasileira — Artmed/Penso, 2ª ed., 2010, ISBN 9788536321196 — e forneceu a referência completa para atualização da bibliografia.
+- Decisão: manter a obra original via edição em português, *Filosofia: textos fundamentais comentados*, tradução de Roberto Hofmeister Pich et al., Porto Alegre: Artmed, 2010, 776 p. Não há necessidade de substituição por outra antologia nem de manter a leitura em inglês para contornar a ausência de tradução.
+- Fontes: [Relatório final, Observações não bloqueantes para referência futura](../../relatorio_final.md), preservado como contexto histórico; confirmação e orientação do docente em 2026-09-10; [Bibliografia atualizada, Bloco 1](../../Bibliografia_Fundamentos_Pensamento_Filosofico.md).
